@@ -2,17 +2,17 @@ const express = require('express');
 const router = express.Router();
 
 const products = [
-  { id: 1, name: 'Popcorn Tube', slug: 'popcorn-tube', image: '/src/assets/products/popcorn-tube.png', sizes: ['32 oz', '46 oz', '50 oz', '75 oz', '130 oz', '170 oz'] },
-  { id: 2, name: 'Single Wall Hot Cup', slug: 'single-wall-hot-cup', image: '/src/assets/products/single-wall-hot-cup.png', sizes: ['150 ml', '200 ml', '250 ml', '6 oz', '8 oz', '10 oz', '12 oz'] },
-  { id: 3, name: 'Cold Cup', slug: 'cold-cup', image: '/src/assets/products/cold-cup.png', sizes: ['330 ml', '450 ml', '550 ml', '650 ml', '900 ml'] },
-  { id: 4, name: 'Double wall Cup', slug: 'double-wall-cup', image: '/src/assets/products/double-wall-cup.png', sizes: ['8 oz', '10 oz', '12 oz', '16 oz'] },
-  { id: 5, name: 'Ripple Cup', slug: 'ripple-cup', image: '/src/assets/products/ripple-cup.png', sizes: ['8 oz', '10 oz', '12 oz', '150 ml', '200 ml'] },
-  { id: 6, name: 'Popcorn Pouch', slug: 'popcorn-pouch', image: '/src/assets/products/popcorn-pouch.png', sizes: ['30 g', '40 g', '60 g', '80 g'] },
-  { id: 7, name: 'French Fries', slug: 'french-fries', image: '/src/assets/products/french-fries.png', sizes: ['Small', 'Medium', 'Large', 'Customize'] },
-  { id: 8, name: "Paper Trey Nacho's Trey", slug: 'paper-trey-nachos-trey', image: '/src/assets/products/paper-trey-nachos-trey.png', sizes: ['4" x 4"', '4" x 6"', '8" x 8"', '4.5" x 2.5"', '5.5" x 5.5"'] },
-  { id: 9, name: 'Pizza Box', slug: 'pizza-box', image: '/src/assets/products/pizza-box.png', sizes: ['Small', 'Medium', 'Large', 'Customize'] },
-  { id: 10, name: 'Sandwich Box', slug: 'sandwich-box', image: '/src/assets/products/sandwich-box.png', sizes: ['Small', 'Medium', 'Large', 'Customize'] },
-  { id: 11, name: 'Burger Box', slug: 'burger-box', image: '/src/assets/products/burger-box.png', sizes: ['Small', 'Medium', 'Large', 'Customize'] }
+  { id: 1, name: 'Popcorn Tube', slug: 'popcorn-tube', image: '/assets/products/popcorn-tube.png', sizes: ['32 oz', '46 oz', '50 oz', '75 oz', '130 oz', '170 oz'] },
+  { id: 2, name: 'Single Wall Hot Cup', slug: 'single-wall-hot-cup', image: '/assets/products/single-wall-hot-cup.png', sizes: ['150 ml', '200 ml', '250 ml', '6 oz', '8 oz', '10 oz', '12 oz'] },
+  { id: 3, name: 'Cold Cup', slug: 'cold-cup', image: '/assets/products/cold-cup.png', sizes: ['330 ml', '450 ml', '550 ml', '650 ml', '900 ml'] },
+  { id: 4, name: 'Double wall Cup', slug: 'double-wall-cup', image: '/assets/products/double-wall-cup.png', sizes: ['8 oz', '10 oz', '12 oz', '16 oz'] },
+  { id: 5, name: 'Ripple Cup', slug: 'ripple-cup', image: '/assets/products/ripple-cup.png', sizes: ['8 oz', '10 oz', '12 oz', '150 ml', '200 ml'] },
+  { id: 6, name: 'Popcorn Pouch', slug: 'popcorn-pouch', image: '/assets/products/popcorn-pouch.png', sizes: ['30 g', '40 g', '60 g', '80 g'] },
+  { id: 7, name: 'French Fries', slug: 'french-fries', image: '/assets/products/french-fries.png', sizes: ['Small', 'Medium', 'Large', 'Customize'] },
+  { id: 8, name: "Paper Trey Nacho's Trey", slug: 'paper-trey-nachos-trey', image: '/assets/products/paper-trey-nachos-trey.png', sizes: ['4" x 4"', '4" x 6"', '8" x 8"', '4.5" x 2.5"', '5.5" x 5.5"'] },
+  { id: 9, name: 'Pizza Box', slug: 'pizza-box', image: '/assets/products/pizza-box.png', sizes: ['Small', 'Medium', 'Large', 'Customize'] },
+  { id: 10, name: 'Sandwich Box', slug: 'sandwich-box', image: '/assets/products/sandwich-box.png', sizes: ['Small', 'Medium', 'Large', 'Customize'] },
+  { id: 11, name: 'Burger Box', slug: 'burger-box', image: '/assets/products/burger-box.png', sizes: ['Small', 'Medium', 'Large', 'Customize'] }
 ];
 
 
