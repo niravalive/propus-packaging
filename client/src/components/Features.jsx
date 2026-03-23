@@ -5,38 +5,38 @@ import { Truck, Headphones, Clock, Tag } from 'lucide-react';
 const features = [
   {
     icon: Truck,
-    title: 'Fast UK Delivery',
+    title: 'Fast Worldwide Delivery',
     description: 'Next working day on stock items',
-    gradient: 'from-blue-500 to-cyan-400',
-    shadow: 'shadow-blue-500/20',
+    gradient: 'from-primary-600 to-primary-400',
+    shadow: 'shadow-primary-500/20',
   },
   {
     icon: Headphones,
     title: 'Expert Support',
     description: 'Mon-Fri 9am - 5pm',
-    gradient: 'from-purple-500 to-pink-400',
-    shadow: 'shadow-purple-500/20',
+    gradient: 'from-accent-500 to-accent-300',
+    shadow: 'shadow-accent-500/20',
   },
   {
     icon: Clock,
     title: 'Quick Dispatch',
     description: 'Same day on orders before 2PM',
-    gradient: 'from-amber-500 to-orange-400',
-    shadow: 'shadow-amber-500/20',
+    gradient: 'from-primary-700 to-primary-500',
+    shadow: 'shadow-primary-500/20',
   },
   {
     icon: Tag,
     title: 'Competitive Pricing',
     description: 'No minimum order value',
-    gradient: 'from-emerald-500 to-teal-400',
-    shadow: 'shadow-emerald-500/20',
+    gradient: 'from-accent-600 to-accent-400',
+    shadow: 'shadow-accent-500/20',
   },
 ];
 
 const Features = () => {
   return (
     <section className="py-20 relative bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <motion.div

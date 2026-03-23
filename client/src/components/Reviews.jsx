@@ -35,7 +35,7 @@ const Reviews = () => {
 
   return (
     <section id="reviews" className="py-24 relative bg-gray-50/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ const Reviews = () => {
                     <Star
                       key={i}
                       size={18}
-                      className={i < review.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-100 fill-gray-100'}
+                      className={i < review.rating ? 'text-accent-500 fill-accent-500' : 'text-gray-100 fill-gray-100'}
                     />
                   ))}
                 </div>

@@ -4,6 +4,7 @@ import {
   Facebook, Instagram, Twitter, Linkedin,
   CreditCard, Truck, Shield
 } from 'lucide-react';
+import logoImage from '../assets/ecotellus-logo.png';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -37,7 +38,7 @@ const Footer = () => {
 
   return (
     <footer id="contact" className="relative pt-24 pb-8 bg-gray-50 border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Newsletter Section */}
         <div className="bg-white border border-gray-200 p-8 sm:p-12 mb-16 rounded-2xl shadow-sm relative overflow-hidden">
           <div className="relative grid lg:grid-cols-2 gap-8 items-center">
@@ -71,29 +72,23 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 flex items-center justify-center text-primary-500 border-2 border-primary-500 rounded-full font-bold text-xl">
-                P
-              </div>
-              <div className="flex flex-col">
-                <span className="text-lg font-black tracking-widest text-primary-500 uppercase leading-none">PROPUS</span>
-                <span className="text-[9px] tracking-[0.4em] text-primary-500 uppercase font-medium">PACKAGING</span>
-              </div>
+              <img src={logoImage} alt="Ecotellus Logo" className="h-12 w-auto" />
             </div>
             <p className="text-sm text-gray-500 leading-relaxed mb-6">
               Importers & wholesalers of low cost takeaway packaging & disposables. Quality products at unbeatable prices.
             </p>
             <div className="space-y-3">
-              <a href="#" className="flex items-center gap-3 text-sm text-gray-600 hover:text-primary-500 transition-colors">
-                <MapPin size={14} className="text-primary-500 flex-shrink-0" />
-                Unit 2 Puddock Farm, Fairfield, Brookland, Kent TN29 9SA
-              </a>
+              <div className="flex items-start gap-3 text-sm text-gray-600">
+                <MapPin size={14} className="text-primary-500 flex-shrink-0 mt-1" />
+                <span>Plot No.A 1-A 10, Silk Heritage Industrial Society, Opp. Diamond Eco Park, NH-53, Unn, Surat 394230</span>
+              </div>
               <a href="tel:+441233234558" className="flex items-center gap-3 text-sm text-gray-600 hover:text-primary-500 transition-colors">
                 <Phone size={14} className="text-primary-500 flex-shrink-0" />
                 +44 1233 234 558
               </a>
-              <a href="mailto:info@propus-packaging.co.uk" className="flex items-center gap-3 text-sm text-gray-600 hover:text-primary-500 transition-colors">
+              <a href="mailto:ecotellus9@gmail.com" className="flex items-center gap-3 text-sm text-gray-600 hover:text-primary-500 transition-colors">
                 <Mail size={14} className="text-primary-500 flex-shrink-0" />
-                info@propus-packaging.co.uk
+                ecotellus9@gmail.com
               </a>
             </div>
           </div>
@@ -163,7 +158,7 @@ const Footer = () => {
         <div className="border-t border-gray-200 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             <p className="text-[11px] text-gray-400">
-              Exonian Ltd T/A Propus Packaging - Co Reg No. 06509353 (Copyright© 2026)
+              Ecotellus (Copyright© 2026)
             </p>
             <div className="flex items-center gap-4 text-gray-300">
               <CreditCard size={24} />

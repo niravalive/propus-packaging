@@ -6,6 +6,9 @@ import Categories from './components/Categories';
 import Footer from './components/Footer';
 import ProductDetail from './components/ProductDetail';
 import ScrollToTop from './components/ScrollToTop';
+import Features from './components/Features';
+import Reviews from './components/Reviews';
+import CustomBranding from './components/CustomBranding';
 
 function App() {
   return (
@@ -26,10 +29,13 @@ function App() {
             <Route path="/" element={
               <>
                 <Hero />
+                <Features />
                 <Categories />
+                <Reviews />
+                <CustomBranding />
               </>
             } />
-            <Route path="/category/:slug" element={<ProductDetail />} />
+            <Route path="/product/:slug" element={<ProductDetail />} />
           </Routes>
           <Footer />
         </div>

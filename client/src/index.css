@@ -55,8 +55,8 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .glass-button {
-    background: #004b4d;
-    border: 1px solid #004b4d;
+    background: #00a2d3;
+    border: 1px solid #00a2d3;
     border-radius: 4px;
     padding: 10px 24px;
     color: white;
@@ -66,13 +66,13 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .glass-button:hover {
-    background: #006064;
-    border-color: #006064;
+    background: #0092c4;
+    border-color: #0092c4;
     transform: translateY(-1px);
   }
 
   .glass-button-solid {
-    background: #004b4d;
+    background: #00a2d3;
     border: none;
     border-radius: 4px;
     padding: 12px 28px;
@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .glass-button-solid:hover {
-    background: #006064;
+    background: #0092c4;
     transform: translateY(-1px);
   }
 
@@ -103,12 +103,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .glass-input:focus {
-    border-color: #004b4d;
-    box-shadow: 0 0 0 2px rgba(0, 75, 77, 0.1);
+    border-color: #00a2d3;
+    box-shadow: 0 0 0 2px rgba(0, 162, 211, 0.1);
   }
 
   .gradient-text {
-    color: #004b4d;
+    color: #00a2d3;
   }
 
   .gradient-text-warm {
@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
 .orb-1 {
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, #004b4d, transparent);
+  background: radial-gradient(circle, #00a2d3, transparent);
   top: -10%;
   right: -5%;
   animation: float 8s ease-in-out infinite;
@@ -145,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
 .orb-2 {
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #006769, transparent);
+  background: radial-gradient(circle, #bbd700, transparent);
   bottom: 20%;
   left: -5%;
   animation: float 10s ease-in-out infinite reverse;
@@ -184,10 +184,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 75, 77, 0.4);
+  background: rgba(0, 162, 211, 0.4);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 75, 77, 0.6);
+  background: rgba(0, 162, 211, 0.6);
 }

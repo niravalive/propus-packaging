@@ -13,7 +13,7 @@ const benefits = [
 const CustomBranding = () => {
   return (
     <section id="custom" className="py-24 relative overflow-hidden bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-100 shadow-sm">
           <div className="grid lg:grid-cols-2 gap-0">
             {/* Image side */}
