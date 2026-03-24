@@ -4,6 +4,7 @@ import {
   Facebook, Instagram, Twitter, Linkedin,
   CreditCard, Truck, Shield
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logoImage from '../assets/ecotellus-logo.png';
 
 const Footer = () => {
@@ -19,135 +20,110 @@ const Footer = () => {
     }
   };
 
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'Products', href: '/products' },
+    { name: 'Industries', href: '/industries' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'FAQ', href: '/faq' },
+  ];
+
   const infoLinks = [
-    { name: 'Delivery Information', href: '#' },
-    { name: 'Returns & Refunds', href: '#' },
-    { name: 'FAQs', href: '#' },
+    { name: 'Bulk Orders', href: '/contact' },
+    { name: 'Quality Standards', href: '/about#quality' },
+    { name: 'Shipping & Delivery', href: '/faq#shipping' },
     { name: 'Privacy Policy', href: '#' },
     { name: 'Terms & Conditions', href: '#' },
   ];
 
-  const navLinks = [
-    { name: 'Home Page', href: '#' },
-    { name: 'Online Shop', href: '#categories' },
-    { name: 'Custom Branding', href: '#custom' },
-    { name: 'About Us', href: '#about' },
-    { name: 'Contact Us', href: '#contact' },
-    { name: 'Reviews', href: '#reviews' },
-  ];
-
   return (
-    <footer id="contact" className="relative pt-24 pb-8 bg-gray-50 border-t border-gray-100">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Newsletter Section */}
-        <div className="bg-white border border-gray-200 p-8 sm:p-12 mb-16 rounded-2xl shadow-sm relative overflow-hidden">
-          <div className="relative grid lg:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-3 text-gray-900">
-                Subscribe to Our <span className="text-primary-500">Newsletter</span>
-              </h3>
-              <p className="text-gray-500">
-                Get exclusive deals, new product alerts, and industry tips delivered to your inbox.
-              </p>
-            </div>
-            <form onSubmit={handleSubscribe} className="flex gap-3">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 rounded-md border border-gray-200 outline-none focus:border-primary-500 transition-colors"
-                required
-              />
-              <button type="submit" className="glass-button-solid flex items-center gap-2 whitespace-nowrap px-6">
-                {subscribed ? 'Subscribed!' : 'Subscribe'}
-                <ArrowRight size={16} />
-              </button>
-            </form>
-          </div>
-        </div>
-
+    <footer className="relative pt-20 pb-8 bg-primary-950 border-t border-primary-900">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <img src={logoImage} alt="Ecotellus Logo" className="h-12 w-auto" />
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-6 bg-white py-2 px-4 rounded inline-block">
+              <img src={logoImage} alt="ecotellus Logo" className="h-10 w-auto filter grayscale opacity-90" />
             </div>
-            <p className="text-sm text-gray-500 leading-relaxed mb-6">
-              Importers & wholesalers of low cost takeaway packaging & disposables. Quality products at unbeatable prices.
+            <p className="text-sm text-primary-300 leading-relaxed mb-6 font-light">
+              Premium custom packaging solutions for global B2B operations. Engineering quality and reliability into every box.
             </p>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3 text-sm text-gray-600">
-                <MapPin size={14} className="text-primary-500 flex-shrink-0 mt-1" />
-                <span>Plot No.A 1-A 10, Silk Heritage Industrial Society, Opp. Diamond Eco Park, NH-53, Unn, Surat 394230</span>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3 text-sm text-primary-200">
+                <MapPin size={16} className="text-accent-500 flex-shrink-0 mt-0.5" />
+                <span>Plot No.A 1-A 10, Silk Heritage Industrial Society, NH-53, Unn, Surat 394230</span>
               </div>
-              <a href="tel:+441233234558" className="flex items-center gap-3 text-sm text-gray-600 hover:text-primary-500 transition-colors">
-                <Phone size={14} className="text-primary-500 flex-shrink-0" />
+              <a href="tel:+441233234558" className="flex items-center gap-3 text-sm text-primary-200 hover:text-accent-400 transition-colors">
+                <Phone size={16} className="text-accent-500 flex-shrink-0" />
                 +44 1233 234 558
               </a>
-              <a href="mailto:ecotellus9@gmail.com" className="flex items-center gap-3 text-sm text-gray-600 hover:text-primary-500 transition-colors">
-                <Mail size={14} className="text-primary-500 flex-shrink-0" />
+              <a href="mailto:ecotellus9@gmail.com" className="flex items-center gap-3 text-sm text-primary-200 hover:text-accent-400 transition-colors">
+                <Mail size={16} className="text-accent-500 flex-shrink-0" />
                 ecotellus9@gmail.com
               </a>
             </div>
           </div>
 
-          {/* Information */}
-          <div>
-            <h4 className="text-sm font-bold text-gray-800 uppercase tracking-wider mb-6">Information</h4>
-            <ul className="space-y-3">
-              {infoLinks.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-sm text-gray-500 hover:text-primary-500 transition-all inline-block">
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Navigation */}
           <div>
-            <h4 className="text-sm font-bold text-gray-800 uppercase tracking-wider mb-6">Navigation</h4>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6">Explore</h4>
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm text-gray-500 hover:text-primary-500 transition-all inline-block">
+                  <Link to={link.href} className="text-sm text-primary-300 hover:text-accent-400 transition-colors flex items-center gap-2 group">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent-600 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Opening Hours & Socials */}
+          {/* Information */}
           <div>
-            <h4 className="text-sm font-bold text-gray-800 uppercase tracking-wider mb-6">Opening Hours</h4>
-            <div className="space-y-2 mb-8">
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Monday - Friday</span>
-                <span className="text-gray-900 font-medium">9AM - 5PM</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Saturday</span>
-                <span className="text-gray-900 font-medium">Closed</span>
-              </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-gray-500">Sunday</span>
-                <span className="text-gray-900 font-medium">Closed</span>
-              </div>
-            </div>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6">Support</h4>
+            <ul className="space-y-3">
+              {infoLinks.map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-sm text-primary-300 hover:text-accent-400 transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            <h4 className="text-sm font-bold text-gray-800 uppercase tracking-wider mb-4">Follow Us</h4>
-            <div className="flex gap-3">
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-6">Stay Updated</h4>
+            <p className="text-sm text-primary-300 mb-4 font-light">
+              Get industry reports and pricing updates delivered to your inbox.
+            </p>
+            <form onSubmit={handleSubscribe} className="flex flex-col gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Work Email Address"
+                className="w-full px-4 py-3 bg-primary-900 border border-primary-800 rounded text-white placeholder-primary-500 focus:outline-none focus:border-accent-500 transition-colors text-sm"
+                required
+              />
+              <button type="submit" className="bg-accent-600 hover:bg-accent-700 text-white font-semibold py-3 px-4 rounded text-sm transition-colors flex items-center justify-center gap-2 w-full">
+                {subscribed ? 'Subscribed ✓' : 'Subscribe Now'}
+              </button>
+            </form>
+            
+            <div className="flex gap-4 mt-8">
               {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
                 <a
                   key={i}
                   href="#"
-                  className="w-10 h-10 rounded-md border border-gray-200 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary-500 hover:border-primary-500 transition-all"
+                  className="w-8 h-8 rounded border border-primary-800 flex items-center justify-center text-primary-500 hover:text-white hover:bg-primary-800 hover:border-primary-700 transition-all"
                 >
-                  <Icon size={18} />
+                  <Icon size={16} />
                 </a>
               ))}
             </div>
@@ -155,14 +131,20 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-200 pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="text-[11px] text-gray-400">
-              Ecotellus (Copyright© 2026)
+        <div className="border-t border-primary-800 pt-8 mt-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-xs text-primary-400 font-light">
+              &copy; {new Date().getFullYear()} ecotellus Packaging. All rights reserved.
             </p>
-            <div className="flex items-center gap-4 text-gray-300">
-              <CreditCard size={24} />
-              <Shield size={20} />
+            <div className="flex items-center gap-6 text-primary-500">
+              <div className="flex items-center gap-2">
+                <Shield size={16} />
+                <span className="text-xs">Secure Platform</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Truck size={16} />
+                <span className="text-xs">Global Shipping</span>
+              </div>
             </div>
           </div>
         </div>

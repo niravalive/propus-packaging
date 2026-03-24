@@ -1,0 +1,69 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { PenTool, Box, Truck, CheckCircle } from 'lucide-react';
+
+const Process = () => {
+  const steps = [
+    {
+      icon: PenTool,
+      title: 'Design & Prototyping',
+      description: 'Our in-house structural engineers map out your requirements to create an exact structural prototype.'
+    },
+    {
+      icon: CheckCircle,
+      title: 'Testing & Approval',
+      description: 'We run crush/drop tests and finalize artwork before entering the mass-manufacturing pipeline.'
+    },
+    {
+      icon: Box,
+      title: 'High-Volume Production',
+      description: 'Operating at massive scale with precision offset/flexo printing and automated die-cutting.'
+    },
+    {
+      icon: Truck,
+      title: 'Global Logistics',
+      description: 'Staged shipments and global fulfillment to ensure your packaging arrives exactly when needed.'
+    }
+  ];
+
+  return (
+    <section className="py-24 bg-white relative overflow-hidden">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">From Concept to Delivery</h2>
+          <p className="text-xl text-gray-600 font-light">
+            A streamlined manufacturing process designed to eliminate bottlenecks and optimize supply chains.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {steps.map((step, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
+              className="relative group lg:px-4"
+            >
+              {/* Connector Line (hidden on mobile, visible on lg) */}
+              {index !== steps.length - 1 && (
+                <div className="hidden lg:block absolute top-[36px] left-[50%] w-full h-[2px] bg-gray-100 -z-10 group-hover:bg-accent-200 transition-colors" />
+              )}
+              
+              <div className="flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-full bg-white border border-gray-200 flex items-center justify-center text-accent-600 mb-6 group-hover:bg-accent-600 group-hover:text-white group-hover:border-accent-600 transition-all z-10 shadow-sm group-hover:shadow-lg group-hover:-translate-y-1">
+                  <step.icon size={28} />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-wide">{step.title}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed font-light">{step.description}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Process;

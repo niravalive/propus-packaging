@@ -1,51 +1,60 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingCart, Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 import logoImage from '../assets/ecotellus-logo.png';
 
 const Navbar = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [showVat, setShowVat] = useState(false);
+  const location = useLocation();
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileOpen(false);
+  }, [location]);
 
   return (
-    <header className="fixed top-0 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 backdrop-blur-md bg-white/40 mt-4 rounded-xl shadow-lg w-[95%] max-w-[1440px]">
-      {/* Main Header (White) */}
-      <div className="py-4 shadow-sm bg-white/20 border-b border-white/10 rounded-xl">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between">
-            {/* Mobile Menu Button - Left */}
+    <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-sm">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo */}
+          <Link to="/" className="flex items-center flex-shrink-0">
+            <img src={logoImage} alt="ecotellus Packaging Logo" className="h-10 w-auto" />
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            <Link to="/" className="text-primary-900 hover:text-accent-600 font-semibold text-sm uppercase tracking-wider transition-colors">Home</Link>
+            <Link to="/products" className="text-primary-900 hover:text-accent-600 font-semibold text-sm uppercase tracking-wider transition-colors">Products</Link>
+            <Link to="/about" className="text-primary-900 hover:text-accent-600 font-semibold text-sm uppercase tracking-wider transition-colors">About Us</Link>
+            <Link to="/contact" className="text-primary-900 hover:text-accent-600 font-semibold text-sm uppercase tracking-wider transition-colors">Contact</Link>
+          </nav>
+
+          {/* CTA & Mobile Toggle */}
+          <div className="flex items-center gap-4">
+            <Link to="/quote" className="hidden md:flex bg-accent-600 hover:bg-accent-700 text-white px-6 py-2.5 rounded text-sm font-bold uppercase tracking-wider transition-colors shadow-sm">
+              Request a Quote
+            </Link>
+            
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="lg:hidden p-2 text-primary-500"
+              className="lg:hidden p-2 text-primary-900 hover:text-accent-600 transition-colors"
             >
-              {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
-
-            {/* Logo - Center */}
-            <a href="#" className="flex items-center">
-              <img src={logoImage} alt="Ecotellus Logo" className="h-10 w-auto" />
-            </a>
-
-            {/* Desktop Nav Links */}
-            <nav className="hidden lg:flex items-center gap-6 uppercase tracking-wider text-sm font-semibold">
-              <a href="#" className="hover:text-primary-500">Shop Online</a>
-              <a href="#custom" className="hover:text-primary-500">Custom Branding</a>
-              <a href="#contact" className="hover:text-primary-500">Contact Us</a>
-              <a href="#faqs" className="hover:text-primary-500">FAQ</a>
-            </nav>
           </div>
+        </div>
 
-          {/* Mobile Menu */}
-          {isMobileOpen && (
-            <div className="lg:hidden mt-4 pb-4 border-t border-gray-100 pt-4 bg-white animate-slide-up">
-              <div className="flex flex-col gap-1">
-                <a href="#" className="px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium">Home</a>
-                <a href="#" className="px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium">Shop Online</a>
-                <a href="#custom" className="px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium">Custom Branding</a>
-                <a href="#contact" className="px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium">Contact Us</a>
-                <a href="#faqs" className="px-4 py-3 hover:bg-gray-50 text-gray-800 font-medium">FAQs</a>
-              </div>
-            </div>
-          )}
+        {/* Mobile Menu */}
+        <div className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out ${isMobileOpen ? 'max-h-[500px] opacity-100 border-t border-gray-100' : 'max-h-0 opacity-0'}`}>
+          <div className="py-4 flex flex-col gap-2">
+            <Link to="/" className="px-4 py-3 text-primary-900 hover:bg-gray-50 hover:text-accent-600 font-bold uppercase tracking-wide rounded">Home</Link>
+            <Link to="/products" className="px-4 py-3 text-primary-900 hover:bg-gray-50 hover:text-accent-600 font-bold uppercase tracking-wide rounded">Products</Link>
+            <Link to="/about" className="px-4 py-3 text-primary-900 hover:bg-gray-50 hover:text-accent-600 font-bold uppercase tracking-wide rounded">About Us</Link>
+            <Link to="/contact" className="px-4 py-3 text-primary-900 hover:bg-gray-50 hover:text-accent-600 font-bold uppercase tracking-wide rounded">Contact</Link>
+            <Link to="/quote" className="mt-4 mx-4 bg-accent-600 text-white px-4 py-3 rounded text-center font-bold uppercase tracking-wider hover:bg-accent-700 transition-colors">
+              Request a Quote
+            </Link>
+          </div>
         </div>
       </div>
     </header>
@@ -53,3 +62,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
