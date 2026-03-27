@@ -39,7 +39,7 @@ const BackToTop = () => {
           animate={{ opacity: 1, scale: 1, x: 0 }}
           exit={{ opacity: 0, scale: 0.5, x: 50 }}
           onClick={scrollToTop}
-          className="fixed bottom-24 right-6 z-[9999] flex items-center gap-2 pr-1 group h-12 bg-primary-950 text-white rounded-full shadow-2xl border border-primary-800 hover:scale-105 transition-all"
+          className="fixed bottom-32 right-6 z-[9999] flex items-center gap-2 pr-1 group h-12 bg-primary-950 text-white rounded-full shadow-2xl border border-primary-800 hover:scale-105 transition-all"
         >
           {/* Popped out minimal label - always visible */}
           <span className="pl-5 pr-2 py-2 text-[10px] font-black uppercase tracking-[0.2em]">
