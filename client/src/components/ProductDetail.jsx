@@ -9,7 +9,11 @@ const ProductDetail = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' }); // Instant reset on load
+    // Instant reset on load
+    window.scrollTo({ top: 0, behavior: 'auto' });
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true });
+    }
     axios.get('/api/products')
       .then(res => {
         const found = res.data.find(p => p.slug === slug);

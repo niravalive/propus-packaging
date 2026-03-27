@@ -48,7 +48,19 @@ const Process = () => {
             >
               {/* Connector Line (hidden on mobile, visible on lg) */}
               {index !== steps.length - 1 && (
-                <div className="hidden lg:block absolute top-[36px] left-[50%] w-full h-[2px] bg-gray-100 -z-10 group-hover:bg-accent-200 transition-colors" />
+                <div className="hidden lg:block absolute top-[32px] left-[50%] w-full h-[3px] bg-gray-100/50 overflow-hidden -z-0">
+                  <motion.div 
+                    initial={{ width: 0 }}
+                    whileInView={{ width: '100%' }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      delay: (index * 0.5) + 0.3, 
+                      duration: 0.8, 
+                      ease: "easeInOut" 
+                    }}
+                    className="h-full bg-gradient-to-r from-accent-500 to-accent-300 shadow-[0_0_10px_rgba(22,163,74,0.3)]"
+                  />
+                </div>
               )}
               
               <div className="flex flex-col items-center text-center">

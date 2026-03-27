@@ -21,8 +21,14 @@ const Categories = () => {
   }, []);
 
   return (
-    <section id="categories" className="py-24 relative bg-gray-50">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section id="categories" className="py-24 relative overflow-hidden bg-primary-950">
+      {/* Background Effect */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[url('/assets/hero-doodle-bg.png')] bg-repeat bg-[length:1000px_1000px] opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-950 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-950/70 via-transparent to-transparent"></div>
+      </div>
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,13 +36,13 @@ const Categories = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-1.5 bg-primary-900 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+          <span className="inline-block px-4 py-1.5 bg-accent-500/10 border border-accent-500/20 text-accent-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
             INDUSTRIAL CATALOG
           </span>
-          <h2 className="text-4xl sm:text-5xl font-black mb-4 text-gray-900 leading-tight">
+          <h2 className="text-4xl sm:text-5xl font-black mb-4 text-white leading-tight">
             Engineered <span className="text-accent-600">Packaging</span>
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light">
+          <p className="text-primary-200 max-w-2xl mx-auto text-lg font-light">
             High-performance packaging classifications designed for scale, durability, and brand impact.
           </p>
         </motion.div>
@@ -50,11 +56,11 @@ const Categories = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="bg-white border border-gray-200 overflow-hidden group cursor-pointer hover:border-accent-500 hover:shadow-lg transition-all duration-300 rounded-2xl"
+              className="bg-primary-900/50 border border-primary-700 overflow-hidden group cursor-pointer hover:border-accent-500 hover:shadow-lg transition-all duration-300 rounded-2xl backdrop-blur-sm"
             >
               <Link to={`/product/${product.slug}`} className="block">
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden bg-white flex items-center justify-center p-6 border-b border-gray-100">
+                <div className="relative h-64 overflow-hidden bg-white flex items-center justify-center p-6 border-b border-primary-700/50">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -70,16 +76,16 @@ const Categories = () => {
                 </div>
 
                 {/* Content */}
-                <div className="p-6 flex flex-col gap-2 bg-white">
+                <div className="p-6 flex flex-col gap-2">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-primary-900 group-hover:text-accent-600 transition-colors uppercase tracking-tight">
+                    <h3 className="text-sm font-bold text-white group-hover:text-accent-400 transition-colors uppercase tracking-tight">
                       {product.name}
                     </h3>
-                    <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-accent-50 group-hover:text-accent-600 transition-all">
+                    <div className="w-8 h-8 rounded-full bg-primary-800 flex items-center justify-center text-primary-300 group-hover:bg-accent-500/20 group-hover:text-accent-400 transition-all">
                       <ArrowRight size={16} />
                     </div>
                   </div>
-                  <p className="text-xs text-gray-500 font-medium mt-1">{product.sizes.length} Base Specifications</p>
+                  <p className="text-xs text-primary-300 font-medium mt-1">{product.sizes.length} Base Specifications</p>
                 </div>
               </Link>
             </motion.div>
