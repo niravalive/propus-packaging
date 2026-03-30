@@ -12,8 +12,8 @@ const BackToTop = () => {
       const clientHeight = document.documentElement.clientHeight;
       const distanceFromBottom = scrollHeight - (scrolled + clientHeight);
 
-      // Only show when near the bottom
-      if (distanceFromBottom < 50) {
+      // Show when the footer starts to appear (footer is ~100vh)
+      if (distanceFromBottom < window.innerHeight) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -35,21 +35,13 @@ const BackToTop = () => {
     <AnimatePresence>
       {isVisible && (
         <motion.button
-          initial={{ opacity: 0, scale: 0.5, x: 50 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          exit={{ opacity: 0, scale: 0.5, x: 50 }}
+          initial={{ opacity: 0, scale: 0.5, y: 50 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          exit={{ opacity: 0, scale: 0.5, y: 50 }}
           onClick={scrollToTop}
-          className="fixed bottom-32 right-6 z-[9999] flex items-center gap-2 pr-1 group h-12 bg-primary-950 text-white rounded-full shadow-2xl border border-primary-800 hover:scale-105 transition-all"
+          className="fixed bottom-8 right-8 z-[9999] flex items-center justify-center w-14 h-14 bg-accent-600 text-white rounded-full shadow-2xl border border-accent-500 hover:bg-accent-700 hover:scale-110 active:scale-95 transition-all group"
         >
-          {/* Popped out minimal label - always visible */}
-          <span className="pl-5 pr-2 py-2 text-[10px] font-black uppercase tracking-[0.2em]">
-            Go On Top
-          </span>
-
-          {/* Icon in accent color */}
-          <div className="w-10 h-10 bg-accent-600 rounded-full flex items-center justify-center transition-colors">
-            <ArrowUp size={20} strokeWidth={3} />
-          </div>
+          <ArrowUp size={24} strokeWidth={3} className="group-hover:-translate-y-1 transition-transform" />
         </motion.button>
       )}
     </AnimatePresence>

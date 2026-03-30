@@ -32,9 +32,9 @@ const features = [
 const Features = () => {
   return (
     <section className="py-24 relative bg-primary-950">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Why Global Brands Choose ecotellus</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">Why Global Brands Choose Ecotellus</h2>
           <div className="w-24 h-1 bg-accent-600 mx-auto"></div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -4,8 +4,8 @@ import { Star, Quote } from 'lucide-react';
 import axios from 'axios';
 
 const fallbackReviews = [
-  { id: 1, name: 'James Wilson', role: 'Procurement Director', rating: 5, text: 'ecotellus completely streamlined our packaging supply chain. The quality is flawless and lead times are deeply respected by their dedicated team.' },
-  { id: 2, name: 'Sarah Thompson', role: 'Operations Manager', rating: 5, text: 'We switched our entire EMEA packaging volume to ecotellus. Their structural engineering team helped us save 15% on dimensional shipping costs.' },
+  { id: 1, name: 'James Wilson', role: 'Procurement Director', rating: 5, text: 'Ecotellus completely streamlined our packaging supply chain. The quality is flawless and lead times are deeply respected by their dedicated team.' },
+  { id: 2, name: 'Sarah Thompson', role: 'Operations Manager', rating: 5, text: 'We switched our entire EMEA packaging volume to Ecotellus. Their structural engineering team helped us save 15% on dimensional shipping costs.' },
   { id: 3, name: 'Michael Chen', role: 'Supply Chain VP', rating: 5, text: 'Reliable high-volume production. Their FSC-certified options helped us meet our corporate sustainability goals well ahead of schedule.' },
 ];
 
@@ -22,7 +22,7 @@ const ReviewCard = ({ review }) => (
         />
       ))}
     </div>
-    <p className="text-gray-700 text-[15px] font-light leading-relaxed mb-8 min-h-[100px]">
+    <p className="text-gray-700 text-[0.9375rem] font-light leading-relaxed mb-8 min-h-[6.25rem]">
       "{review.text}"
     </p>
     <div className="flex items-center gap-4 pt-6 border-t border-gray-100">
@@ -50,21 +50,21 @@ const Reviews = () => {
 
   return (
     <section id="reviews" className="py-24 relative bg-gray-50 overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative mb-16">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative mb-16">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center"
         >
-          <span className="inline-block px-4 py-1.5 bg-primary-900 text-white text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+          <span className="inline-block px-4 py-1.5 bg-primary-900 text-white text-[0.625rem] font-bold tracking-[0.2em] uppercase mb-4">
             CLIENT SUCCESS
           </span>
           <h2 className="text-4xl sm:text-5xl font-black mb-4 text-gray-900 leading-tight">
             Trusted by <span className="text-accent-600">Procurement</span>
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg font-light">
-            Hear from operations leaders who rely on ecotellus for their global packaging needs.
+            Hear from operations leaders who rely on Ecotellus for their global packaging needs.
           </p>
         </motion.div>
       </div>
@@ -76,7 +76,7 @@ const Reviews = () => {
         <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
 
         {/* The Track (Pure CSS Animation for better hover reliability) */}
-        <div 
+        <div
           className="flex w-max marquee-track will-change-transform"
           style={{
             // Slower speed: reviews.length * 10 seconds.

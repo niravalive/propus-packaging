@@ -2,13 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Package, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroImage from '../assets/hero-section-right.jpg';
 
 const Hero = () => {
   return (
     <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gray-50">
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
 
           {/* ── Left: Text Content ── */}
@@ -60,13 +59,47 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* ── Right: Hero Image ── */}
-          <div className="flex-1 w-full max-w-sm lg:max-w-xl flex items-center lg:justify-end lg:translate-x-12 lg:pr-0 lg:ml-3">
-            <img
-              src={heroImage}
-              alt="Ecotellus packaging manufacturing"
-              className="w-full h-auto object-cover"
-            />
+          {/* ── Right: Composite Hero Images ── */}
+          <div className="flex-1 w-full max-w-xl relative mx-auto lg:ml-auto lg:mr-0 mt-16 lg:mt-0">
+            {/* Main larger image */}
+            <motion.div
+              className="w-4/5 aspect-square ml-auto relative z-0 bg-gray-200 overflow-hidden shadow-2xl group"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              {/* Blue Overlay - hex code #01a2d3 at 50% opacity */}
+              <div
+                className="absolute inset-0 z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-500"
+                style={{ backgroundColor: '#01a2d380' }}
+              ></div>
+              <img
+                src="/assets/Rollar/lower/rolling image (1).webp"
+                alt="Factory Process"
+                style={{ filter: 'grayscale(30%)' }}
+                className="w-full h-full object-cover hover:scale-105 group-hover:!grayscale-0 transition-all duration-500"
+              />
+            </motion.div>
+
+            {/* Floating smaller image */}
+            <motion.div
+              className="absolute left-0 -bottom-10 lg:-bottom-16 w-[45%] max-w-[18.75rem] z-20 bg-white p-4 shadow-[0_20px_50px_rgba(34,197,94,0.3)] hover:shadow-2xl flex items-center justify-center overflow-hidden group/small transition-all duration-500"
+              initial={{ y: 30, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+            >
+              {/* Green Overlay - hex code #bcd700 at 50% opacity */}
+              <div
+                className="absolute inset-0 z-10 pointer-events-none group-hover/small:opacity-0 transition-opacity duration-500"
+                style={{ backgroundColor: '#21c55e80' }}
+              ></div>
+              <img
+                src="/assets/Ecotellus Web Images/Products/Popcorm Tub - red/2.png"
+                alt="Product Sample"
+                style={{ filter: 'grayscale(30%)' }}
+                className="w-full h-auto object-contain hover:scale-105 group-hover/small:!grayscale-0 transition-all duration-500 relative"
+              />
+            </motion.div>
           </div>
 
         </div>

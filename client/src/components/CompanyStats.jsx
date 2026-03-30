@@ -54,10 +54,10 @@ const CompanyStats = () => {
     <section id="company-stats" className="py-20 md:py-28 relative overflow-hidden bg-white">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
-        <div className="absolute inset-0 bg-[url('/assets/hero-doodle-bg.png')] bg-repeat bg-[length:600px_600px]"></div>
+        <div className="absolute inset-0 bg-[url('/assets/hero-doodle-bg.png')] bg-repeat bg-[length:37.5rem_37.5rem]"></div>
       </div>
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,13 +80,13 @@ const CompanyStats = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="relative w-full rounded-xl overflow-hidden border border-gray-200"
-          style={{ minHeight: '420px' }}
+          style={{ minHeight: '26.25rem' }}
         >
           {/* Full background image */}
           <img
-            src="/assets/factory-interior.png"
+            src="/assets/Ecotellus Web Images/Factory /factory 2.webp"
             alt="Ecotellus packaging factory interior"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover -translate-x-80"
           />
 
           {/* Fade gradient: image fades from visible (left) to white (right) */}
@@ -98,13 +98,13 @@ const CompanyStats = () => {
           ></div>
 
           {/* Content layer */}
-          <div className="relative z-10 flex items-stretch w-full h-full" style={{ minHeight: '420px' }}>
+          <div className="relative z-10 flex items-stretch w-full h-full" style={{ minHeight: '26.25rem' }}>
             {/* Left side: empty (image shows through) */}
             <div className="hidden lg:block lg:w-[40%]"></div>
 
             {/* Right side: Stats with "+" crosshair divider */}
             <div className="w-full lg:w-[60%] flex items-center justify-center py-12 px-6 sm:px-10">
-              <div className="relative w-full max-w-[520px]">
+              <div className="relative w-full max-w-[32.5rem]">
                 {/* The "+" cross divider */}
                 {/* Vertical line */}
                 <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-accent-600/40 to-transparent -translate-x-1/2 z-20"></div>

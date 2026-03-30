@@ -143,33 +143,33 @@ const CertificateModal = ({ cert, onClose }) => (
         </div>
 
         <p className="text-gray-600 text-center text-sm leading-relaxed mb-8 font-light">
-          This is to certify that <strong className="text-gray-900">ecotellus Packaging Pvt. Ltd.</strong> has been assessed
+          This is to certify that <strong className="text-gray-900">Ecotellus Packaging Pvt. Ltd.</strong> has been assessed
           and found to conform to the requirements of <strong className="text-gray-900">{cert.title}</strong>.
         </p>
 
         {/* Details Grid */}
         <div className="grid grid-cols-2 gap-4 mb-8">
           <div className="bg-gray-50 rounded-xl p-4">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1">Certificate No.</p>
+            <p className="text-[0.625rem] font-bold uppercase tracking-wider text-gray-400 mb-1">Certificate No.</p>
             <p className="text-sm font-semibold text-gray-900">{cert.certNumber}</p>
           </div>
           <div className="bg-gray-50 rounded-xl p-4">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1">Certifying Body</p>
+            <p className="text-[0.625rem] font-bold uppercase tracking-wider text-gray-400 mb-1">Certifying Body</p>
             <p className="text-sm font-semibold text-gray-900">{cert.certBody}</p>
           </div>
           <div className="bg-gray-50 rounded-xl p-4">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1">Issue Date</p>
+            <p className="text-[0.625rem] font-bold uppercase tracking-wider text-gray-400 mb-1">Issue Date</p>
             <p className="text-sm font-semibold text-gray-900">{cert.issueDate}</p>
           </div>
           <div className="bg-gray-50 rounded-xl p-4">
-            <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-1">Expiry Date</p>
+            <p className="text-[0.625rem] font-bold uppercase tracking-wider text-gray-400 mb-1">Expiry Date</p>
             <p className="text-sm font-semibold text-gray-900">{cert.expiryDate}</p>
           </div>
         </div>
 
         {/* Scope */}
         <div className="bg-gray-50 rounded-xl p-5 mb-6">
-          <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2">Scope of Certification</p>
+          <p className="text-[0.625rem] font-bold uppercase tracking-wider text-gray-400 mb-2">Scope of Certification</p>
           <p className="text-sm text-gray-700 leading-relaxed font-light">{cert.scope}</p>
         </div>
 
@@ -221,7 +221,7 @@ const CertCard = ({ cert, onClick }) => (
       </div>
 
       <div className="mb-4">
-        <span className="text-[10px] font-bold tracking-[0.2em] uppercase px-2 py-1 rounded-full" style={{ color: cert.color, backgroundColor: `${cert.color}12` }}>
+        <span className="text-[0.625rem] font-bold tracking-[0.2em] uppercase px-2 py-1 rounded-full" style={{ color: cert.color, backgroundColor: `${cert.color}12` }}>
           {cert.company}
         </span>
       </div>
@@ -250,7 +250,7 @@ const CertificationsPage = () => {
 
       {/* Certifications Grid */}
       <section className="py-24">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-black text-primary-900 mb-4">Global Quality Standards</h2>
             <p className="text-gray-600 text-lg font-light max-w-2xl mx-auto">

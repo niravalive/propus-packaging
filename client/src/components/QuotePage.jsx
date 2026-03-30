@@ -13,7 +13,7 @@ const QuotePage = () => {
         </p>
       </div>
 
-      <div className="max-w-[600px] mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
+      <div className="max-w-[37.5rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

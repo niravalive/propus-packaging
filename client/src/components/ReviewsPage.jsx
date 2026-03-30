@@ -85,6 +85,33 @@ const fallbackReviews = [
     text: 'Switching to ecotellus was the best decision our procurement team made this year. Their sustainable packaging options align perfectly with our brand values and the cost-per-unit is extremely competitive.',
     date: 'July 2025',
   },
+  {
+    id: 10,
+    name: 'Elena Rossi',
+    role: 'Creative Director',
+    company: 'Bella Boutique',
+    rating: 5,
+    text: 'The luxury finish on our rigid boxes is spectacular. ecotellus delivered a custom texture that reflects our high-end brand identity perfectly. Their craftmanship is unmatched in the industry.',
+    date: 'June 2025',
+  },
+  {
+    id: 11,
+    name: 'Klaus Schmidt',
+    role: 'Inventory Planner',
+    company: 'AutoTechnic AG',
+    rating: 5,
+    text: 'Precision is key for automotive parts. The custom inserts ecotellus designed for us reduced transit damage to practically zero. Robust, reliable, and highly professional service.',
+    date: 'May 2025',
+  },
+  {
+    id: 12,
+    name: 'Sophie Dubois',
+    role: 'Marketing Head',
+    company: 'Luxe Cosmetics',
+    rating: 5,
+    text: 'Their rapid prototyping allowed us to launch our seasonal collection two weeks ahead of schedule. The foil stamping turned out even better than the digital renders. Truly a world-class partner.',
+    date: 'April 2025',
+  },
 ];
 
 const colorPalette = [
@@ -97,12 +124,12 @@ const ReviewCard = ({ review, index }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
       className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-transparent hover:shadow-xl transition-all duration-500 relative"
-      style={{ aspectRatio: '2 / 1' }}
+      style={{ aspectRatio: '3 / 2' }}
     >
       {/* Top accent bar */}
       <div
@@ -128,7 +155,7 @@ const ReviewCard = ({ review, index }) => {
           </div>
 
           {/* Review text */}
-          <p className="text-gray-700 text-[14px] sm:text-[15px] font-light leading-relaxed line-clamp-4">
+          <p className="text-gray-700 text-[0.875rem] sm:text-[0.9375rem] font-light leading-relaxed line-clamp-5 italic">
             "{review.text}"
           </p>
         </div>
@@ -155,74 +182,78 @@ const ReviewsPage = () => {
   const [reviews, setReviews] = useState(fallbackReviews);
 
   useEffect(() => {
-    axios.get('/api/reviews')
-      .then(res => {
-        if (res.data && res.data.length > 0) {
-          setReviews(res.data);
-        }
-      })
-      .catch(() => {});
+    // Scroll to top on load
+    window.scrollTo(0, 0);
   }, []);
 
   const avgRating = (reviews.reduce((a, r) => a + r.rating, 0) / reviews.length).toFixed(1);
 
   return (
-    <div className="pt-0 bg-white">
-      {/* Hero */}
-      <section className="bg-primary-950 py-32 text-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&auto=format&fit=crop&q=60')] bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 bg-primary-950/70"></div>
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 60px, white 60px, white 61px), repeating-linear-gradient(90deg, transparent, transparent 60px, white 60px, white 61px)',
+    <div className="bg-white">
+      {/* Full Screen Hero (Strict 100vh) */}
+      <section className="bg-primary-950 h-screen flex items-center justify-center text-center px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&auto=format&fit=crop&q=60')] bg-cover bg-center opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-primary-950/80 via-primary-950/60 to-primary-950/90"></div>
+        <div className="absolute inset-0 opacity-[0.05]" style={{
+          backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+          backgroundSize: '40px 40px'
         }} />
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block px-4 py-1.5 bg-accent-600/20 text-accent-400 text-[10px] font-bold tracking-[0.25em] uppercase mb-6 rounded-full border border-accent-600/30">
-              Client Testimonials
+
+        <div className="relative z-10 max-w-5xl mx-auto px-0 -mt-96">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center">
+            <span className="inline-block px-5 py-2 bg-accent-600/20 text-accent-400 text-[0.6875rem] font-black tracking-[0.4em] uppercase mb-8 rounded-full border border-accent-600/40 backdrop-blur-sm">
+              Impact Verified · Quality Assured
             </span>
-            <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-6 tracking-tight">
-              What Our <span className="text-accent-400">Clients</span> Say
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black text-white mb-8 tracking-tighter leading-none">
+              Client <span className="text-accent-400">Voices</span>
             </h1>
-            <p className="text-xl text-primary-200 font-light leading-relaxed max-w-2xl mx-auto">
-              Hear from procurement leaders, operations managers, and brand directors who trust ecotellus for their global packaging needs.
+            <p className="text-xl sm:text-2xl text-primary-100 font-light leading-relaxed max-w-3xl mx-auto opacity-90">
+              Trusted by industry-leading procurement teams and global brands to deliver packaging excellence at scale.
             </p>
+          </motion.div>
+        </div>
+
+        {/* Massive Stats Bar Integrated at bottom of Hero */}
+        <div className="absolute bottom-60 left-0 right-0 z-20 px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl border border-gray-100 py-10 md:py-16 px-8 sm:px-12"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:divide-x divide-gray-100">
+              <div className="text-center md:px-4">
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <Star size={30} className="text-amber-400 fill-amber-400" />
+                  <span className="text-5xl md:text-6xl font-black text-primary-950 tracking-tighter">{avgRating}</span>
+                </div>
+                <p className="text-[0.625rem] text-gray-400 font-black uppercase tracking-[0.2em]">Industry-Leading Rating</p>
+              </div>
+
+              <div className="text-center md:px-4">
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <MessageSquare size={30} className="text-accent-600" />
+                  <span className="text-5xl md:text-6xl font-black text-primary-950 tracking-tighter">{reviews.length}</span>
+                </div>
+                <p className="text-[0.625rem] text-gray-400 font-black uppercase tracking-[0.2em]">Corporate Partners</p>
+              </div>
+
+              <div className="text-center md:px-4">
+                <div className="flex items-center justify-center gap-3 mb-2">
+                  <ThumbsUp size={30} className="text-accent-600" />
+                  <span className="text-5xl md:text-6xl font-black text-primary-950 tracking-tighter">100%</span>
+                </div>
+                <p className="text-[0.625rem] text-gray-400 font-black uppercase tracking-[0.2em]">Recommendation Rate</p>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Stats Bar */}
-      <section className="border-b border-gray-200 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex flex-wrap justify-center gap-8 sm:gap-16">
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 mb-1">
-                <Star size={20} className="text-amber-400 fill-amber-400" />
-                <span className="text-3xl font-black text-primary-900">{avgRating}</span>
-              </div>
-              <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">Average Rating</p>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 mb-1">
-                <MessageSquare size={20} className="text-accent-600" />
-                <span className="text-3xl font-black text-primary-900">{reviews.length}</span>
-              </div>
-              <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">Total Reviews</p>
-            </div>
-            <div className="text-center">
-              <div className="flex items-center justify-center gap-2 mb-1">
-                <ThumbsUp size={20} className="text-accent-600" />
-                <span className="text-3xl font-black text-primary-900">100%</span>
-              </div>
-              <p className="text-xs text-gray-500 font-medium uppercase tracking-wider">Recommend Us</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Reviews Grid */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <section className="py-32 bg-gray-50">
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
             {reviews.map((review, index) => (
               <ReviewCard key={review.id} review={review} index={index} />
             ))}

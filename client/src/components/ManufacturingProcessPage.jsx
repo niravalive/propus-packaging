@@ -123,7 +123,7 @@ const StepCard = ({ step, index, isLast }) => {
             </div>
           </div>
 
-          <p className="text-gray-600 leading-relaxed font-light mb-6 text-[15px]">
+          <p className="text-gray-600 leading-relaxed font-light mb-6 text-[0.9375rem]">
             {step.description}
           </p>
 
@@ -180,7 +180,7 @@ const ManufacturingProcessPage = () => {
         }} />
         <div className="relative z-10 max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-block px-4 py-1.5 bg-accent-600/20 text-accent-400 text-[10px] font-bold tracking-[0.25em] uppercase mb-6 rounded-full border border-accent-600/30">
+            <span className="inline-block px-4 py-1.5 bg-accent-600/20 text-accent-400 text-[0.625rem] font-bold tracking-[0.25em] uppercase mb-6 rounded-full border border-accent-600/30">
               How We Build
             </span>
             <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-6 tracking-tight">
@@ -195,7 +195,7 @@ const ManufacturingProcessPage = () => {
 
       {/* Process Timeline */}
       <section className="py-24">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[75rem] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="text-center mb-20">
             <h2 className="text-3xl font-black text-primary-900 mb-4">8-Step Production Pipeline</h2>

@@ -42,7 +42,7 @@ h6 {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border);
-    border-radius: 8px;
+    border-radius: 0.5rem;
     /* Sharper industrial look */
     box-shadow: var(--glass-shadow);
     transition: all 0.3s ease;
@@ -65,8 +65,8 @@ h6 {
   .glass-button {
     background: transparent;
     border: 1px solid #16a34a;
-    border-radius: 4px;
-    padding: 10px 24px;
+    border-radius: 0.25rem;
+    padding: 0.625rem 1.5rem;
     color: #16a34a;
     font-weight: 600;
     cursor: pointer;
@@ -81,8 +81,8 @@ h6 {
   .glass-button-solid {
     background: #16a34a;
     border: none;
-    border-radius: 4px;
-    padding: 12px 28px;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.75rem;
     color: white;
     font-weight: 600;
     cursor: pointer;
@@ -98,10 +98,10 @@ h6 {
   .glass-input {
     background: #ffffff;
     border: 1px solid #cbd5e1;
-    border-radius: 4px;
-    padding: 12px 16px;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
     color: #0f172a;
-    font-size: 14px;
+    font-size: 0.875rem;
     outline: none;
     transition: all 0.3s ease;
   }
@@ -143,8 +143,8 @@ h6 {
 }
 
 .orb-1 {
-  width: 500px;
-  height: 500px;
+  width: 31.25rem;
+  height: 31.25rem;
   background: radial-gradient(circle, #102a43, transparent);
   /* Deep Navy */
   top: -10%;
@@ -153,8 +153,8 @@ h6 {
 }
 
 .orb-2 {
-  width: 400px;
-  height: 400px;
+  width: 25rem;
+  height: 25rem;
   background: radial-gradient(circle, #16a34a, transparent);
   /* Industrial Green */
   bottom: 20%;
@@ -199,7 +199,7 @@ h6 {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 0.625rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -208,7 +208,7 @@ h6 {
 
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 162, 211, 0.4);
-  border-radius: 10px;
+  border-radius: 0.625rem;
   border: 2px solid transparent;
   background-clip: padding-box;
 }

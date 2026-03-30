@@ -56,7 +56,7 @@ const FAQ = () => {
         </p>
       </div>
 
-      <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
+      <div className="max-w-[56.25rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8 bg-white p-2 rounded-lg shadow-md border border-gray-200">
           {faqs.map(tab => (

@@ -7,7 +7,7 @@ const PoliciesPage = () => {
     <div className="pt-0 bg-white">
 
       {/* Content */}
-      <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-[56.25rem] mx-auto px-4 sm:px-6 lg:px-8 py-20">
 
         {/* ========== PRIVACY & POLICIES ========== */}
         <section id="privacy" className="mb-24 scroll-mt-36">
@@ -28,7 +28,7 @@ const PoliciesPage = () => {
             {/* Introduction */}
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <p className="text-lg leading-relaxed font-light border-l-4 border-accent-500 pl-6 py-2 bg-accent-50/50 rounded-r-lg">
-                ecotellus Packaging Pvt. Ltd. ("ecotellus", "we", "our", or "us") is committed to protecting the privacy and security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our services.
+                Ecotellus Packaging Pvt. Ltd. ("ecotellus", "we", "our", or "us") is committed to protecting the privacy and security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or engage with our services.
               </p>
             </motion.div>
 
@@ -200,7 +200,7 @@ const PoliciesPage = () => {
             {/* Introduction */}
             <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
               <p className="text-lg leading-relaxed font-light border-l-4 border-primary-800 pl-6 py-2 bg-primary-50/50 rounded-r-lg">
-                Welcome to ecotellus. These Terms and Conditions ("Terms") govern your use of our website and services. By accessing or using our website, placing orders, or engaging our services, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you should not use our website or services.
+                Welcome to Ecotellus. These Terms and Conditions ("Terms") govern your use of our website and services. By accessing or using our website, placing orders, or engaging our services, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you should not use our website or services.
               </p>
             </motion.div>
 
@@ -223,7 +223,7 @@ const PoliciesPage = () => {
               variant="dark"
               content={
                 <>
-                  <p className="mb-4">ecotellus provides custom packaging design, manufacturing, and logistics services. The following terms apply:</p>
+                  <p className="mb-4">Ecotellus provides custom packaging design, manufacturing, and logistics services. The following terms apply:</p>
                   <ul className="space-y-3 ml-1">
                     <li className="flex items-start gap-3">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary-800 mt-2 flex-shrink-0" />
@@ -265,7 +265,7 @@ const PoliciesPage = () => {
               variant="dark"
               content={
                 <p className="leading-relaxed">
-                  All content on this website—including text, graphics, logos, images, designs, and software—is the property of ecotellus Packaging Pvt. Ltd. or its content suppliers and is protected by international copyright and intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any material on this website without our prior written consent. Custom designs created for clients remain the intellectual property of the client, while structural engineering and die designs used in production remain with ecotellus.
+                  All content on this website—including text, graphics, logos, images, designs, and software—is the property of Ecotellus Packaging Pvt. Ltd. or its content suppliers and is protected by international copyright and intellectual property laws. You may not reproduce, distribute, modify, or create derivative works from any material on this website without our prior written consent. Custom designs created for clients remain the intellectual property of the client, while structural engineering and die designs used in production remain with Ecotellus.
                 </p>
               }
             />
@@ -277,7 +277,7 @@ const PoliciesPage = () => {
               variant="dark"
               content={
                 <p className="leading-relaxed">
-                  To the maximum extent permitted by law, ecotellus shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to the use of our website or services. Our total liability shall not exceed the value of the specific order in question. We are not responsible for delays or failures in performance resulting from circumstances beyond our reasonable control, including natural disasters, pandemics, government actions, or supply chain disruptions.
+                  To the maximum extent permitted by law, Ecotellus shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to the use of our website or services. Our total liability shall not exceed the value of the specific order in question. We are not responsible for delays or failures in performance resulting from circumstances beyond our reasonable control, including natural disasters, pandemics, government actions, or supply chain disruptions.
                 </p>
               }
             />
@@ -301,7 +301,7 @@ const PoliciesPage = () => {
               variant="dark"
               content={
                 <p className="leading-relaxed">
-                  ecotellus reserves the right to update or modify these Terms at any time without prior notice. Changes become effective immediately upon posting to this page. Your continued use of the website following any changes constitutes your acceptance of the revised Terms. We recommend reviewing this page periodically for any updates.
+                  Ecotellus reserves the right to update or modify these Terms at any time without prior notice. Changes become effective immediately upon posting to this page. Your continued use of the website following any changes constitutes your acceptance of the revised Terms. We recommend reviewing this page periodically for any updates.
                 </p>
               }
             />
@@ -350,7 +350,7 @@ const PolicySection = ({ icon, title, content, variant = 'light' }) => (
       </div>
       <h3 className="text-xl font-bold text-primary-900">{title}</h3>
     </div>
-    <div className="ml-[52px] text-[15px] font-light">
+    <div className="ml-[3.25rem] text-[0.9375rem] font-light">
       {content}
     </div>
   </motion.div>
