@@ -113,7 +113,7 @@ const Footer = () => {
             </div>
 
             {/* Navigation */}
-            <div>
+            <div className=" lg:ml-20">
               <h4 className="text-sm font-black text-primary-950 uppercase tracking-widest mb-6 border-l-4 border-accent-600 pl-3">Explore</h4>
               <ul className="space-y-2">
                 {navLinks.map((link) => (

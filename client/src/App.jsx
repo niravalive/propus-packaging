@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import TrustBar from './components/TrustBar';
@@ -22,6 +23,7 @@ import ManufacturingProcessPage from './components/ManufacturingProcessPage';
 import ReviewsPage from './components/ReviewsPage';
 import PoliciesPage from './components/PoliciesPage';
 import CustomPrintingPage from './components/CustomPrintingPage';
+import PageTransition from './components/PageTransition';
 import Lenis from 'lenis';
 
 function App() {
@@ -67,35 +69,44 @@ function App() {
           <BackToTop />
           <Navbar />
           <main className="flex-grow pt-20"> {/* PT-20 for fixed navbar */}
-            <Routes>
-              <Route path="/" element={
-                <>
-                  <Hero />
-                  <Categories />
-                  <CompanyStats />
-                  <Features />
-                  <Process />
-                  <TrustBar />
-                  <Reviews />
-                </>
-              } />
-              <Route path="/product/:slug" element={<ProductDetail />} />
-              <Route path="/products" element={<><Categories /><Features /></>} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/faq" element={<FAQ />} />
-              <Route path="/quote" element={<QuotePage />} />
-              <Route path="/certifications" element={<CertificationsPage />} />
-              <Route path="/manufacturing-process" element={<ManufacturingProcessPage />} />
-              <Route path="/reviews" element={<ReviewsPage />} />
-              <Route path="/policies" element={<PoliciesPage />} />
-              <Route path="/custom-printing" element={<CustomPrintingPage />} />
-            </Routes>
+            <AnimatedRoutes />
           </main>
           <Footer />
         </div>
       </div>
     </Router>
+  );
+}
+
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={
+          <PageTransition>
+            <Hero />
+            <Categories />
+            <CompanyStats />
+            <Features />
+            <Process />
+            <TrustBar />
+            <Reviews />
+          </PageTransition>
+        } />
+        <Route path="/product/:slug" element={<PageTransition><ProductDetail /></PageTransition>} />
+        <Route path="/products" element={<PageTransition><Categories /><Features /></PageTransition>} />
+        <Route path="/about" element={<PageTransition><About /></PageTransition>} />
+        <Route path="/contact" element={<PageTransition><Contact /></PageTransition>} />
+        <Route path="/faq" element={<PageTransition><FAQ /></PageTransition>} />
+        <Route path="/quote" element={<PageTransition><QuotePage /></PageTransition>} />
+        <Route path="/certifications" element={<PageTransition><CertificationsPage /></PageTransition>} />
+        <Route path="/manufacturing-process" element={<PageTransition><ManufacturingProcessPage /></PageTransition>} />
+        <Route path="/reviews" element={<PageTransition><ReviewsPage /></PageTransition>} />
+        <Route path="/policies" element={<PageTransition><PoliciesPage /></PageTransition>} />
+        <Route path="/custom-printing" element={<PageTransition><CustomPrintingPage /></PageTransition>} />
+      </Routes>
+    </AnimatePresence>
   );
 }
 

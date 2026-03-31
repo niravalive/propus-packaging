@@ -74,13 +74,8 @@ const Contact = () => {
 
   return (
     <div className="pt-0 bg-gray-50 min-h-screen pb-24">
-      <div className="bg-primary-950 py-24 text-center px-4">
-        <div className="max-w-[87.5rem] mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-black text-white mb-6">Contact Us</h1>
-          <p className="text-xl text-primary-300 max-w-2xl mx-auto font-light">
-            Partner with Ecotellus for high-volume, precision packaging. Fill out the form below to connect with an account manager.
-          </p>
-        </div>
+      <div className="bg-primary-950 py-24 pt-10 text-center px-4">
+
       </div>
 
       <div className="max-w-[87.5rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
@@ -183,7 +178,7 @@ const Contact = () => {
                 <div className="grid sm:grid-cols-2 gap-4 mb-8">
                   <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Select Product *</label>
-                    <select 
+                    <select
                       value={selectedProduct}
                       onChange={handleProductChange}
                       className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors appearance-none shadow-sm text-sm"
@@ -198,7 +193,7 @@ const Contact = () => {
 
                   <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Available Sizes *</label>
-                    <select 
+                    <select
                       value={selectedSize}
                       onChange={(e) => setSelectedSize(e.target.value)}
                       disabled={!selectedProduct}
