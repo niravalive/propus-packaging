@@ -171,7 +171,7 @@ const ProductDetail = () => {
               {/* Main Image */}
               <div
                 onClick={toggleModal}
-                className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex items-center justify-center p-8 lg:p-12 relative group min-h-[300px] md:min-h-0 bg-[#ffffff] cursor-zoom-in"
+                className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex items-center justify-center p-8 lg:p-12 relative group min-h-[18.75rem] md:min-h-0 bg-[#ffffff] cursor-zoom-in"
                 style={{ backgroundColor: '#ffffff' }}
               >
                 <AnimatePresence mode="wait">
@@ -388,7 +388,7 @@ const ProductDetail = () => {
           .roller-set {
             display: flex;
             flex-shrink: 0;
-            gap: 8px;
+            gap: 0.5rem;
           }
           .roller-track-rtl {
             animation: roller-rtl 30s linear infinite;

@@ -107,9 +107,9 @@ const CompanyStats = () => {
               <div className="relative w-full max-w-[32.5rem]">
                 {/* The "+" cross divider */}
                 {/* Vertical line */}
-                <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-accent-600/40 to-transparent -translate-x-1/2 z-20"></div>
+                <div className="absolute left-1/2 top-0 bottom-0 w-[0.125rem] bg-gradient-to-b from-transparent via-accent-600/40 to-transparent -translate-x-1/2 z-20"></div>
                 {/* Horizontal line */}
-                <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent-600/40 to-transparent -translate-y-1/2 z-20"></div>
+                <div className="absolute top-1/2 left-0 right-0 h-[0.125rem] bg-gradient-to-r from-transparent via-accent-600/40 to-transparent -translate-y-1/2 z-20"></div>
 
 
 

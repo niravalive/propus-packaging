@@ -16,7 +16,16 @@
 }
 
 html {
-  /* Removed scroll-behavior: smooth to prevent visible scrolling during navigation */
+  /* Dynamic font scaling to make all elements responsive gracefully */
+  /* Mobile default: 16px */
+  font-size: 16px;
+}
+
+@media (min-width: 1024px) {
+  html {
+    /* Scale from smaller laptops to desktop smoothly to prevent crowding */
+    font-size: clamp(12px, 1.1vw, 16px);
+  }
 }
 
 body {

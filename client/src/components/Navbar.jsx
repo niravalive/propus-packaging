@@ -40,16 +40,16 @@ const Navbar = () => {
                   className={`relative py-1 text-sm font-bold uppercase tracking-widest transition-all duration-300 group ${
                     isActive ? 'text-accent-600' : 'text-primary-900 hover:text-accent-600'
                   }`}
-                  style={isActive ? { textShadow: '0 0 15px rgba(188, 215, 0, 0.3)' } : {}}
+                  style={isActive ? { textShadow: '0 0 1rem rgba(188, 215, 0, 0.3)' } : {}}
                 >
                   {item.name}
                   {/* Hover Underline: Subtle and Soft */}
                   {!isActive && (
-                    <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent-500/30 transition-all duration-500 ease-out group-hover:w-full" />
+                    <span className="absolute bottom-0 left-0 w-0 h-[0.125rem] bg-accent-500/30 transition-all duration-500 ease-out group-hover:w-full" />
                   )}
                   {/* Active Underline: Solid and Animated */}
                   {isActive && (
-                    <span className="absolute bottom-0 left-0 right-0 h-[3px] bg-accent-600 rounded-full" />
+                    <span className="absolute bottom-0 left-0 right-0 h-[0.1875rem] bg-accent-600 rounded-full" />
                   )}
                 </Link>
               );

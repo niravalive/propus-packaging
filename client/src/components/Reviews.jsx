@@ -11,7 +11,7 @@ const fallbackReviews = [
 
 const ReviewCard = ({ review }) => (
   // 400px width + 2rem (32px) mx-4 margins = 432px total footprint
-  <div className="flex-shrink-0 w-[400px] bg-white p-8 relative border border-gray-200 shadow-sm hover:border-accent-400 hover:shadow-lg transition-all duration-300 mx-4 rounded-2xl whitespace-normal select-none">
+  <div className="flex-shrink-0 w-[25rem] bg-white p-8 relative border border-gray-200 shadow-sm hover:border-accent-400 hover:shadow-lg transition-all duration-300 mx-4 rounded-2xl whitespace-normal select-none">
     <Quote size={40} className="absolute top-6 right-6 text-gray-100" />
     <div className="flex gap-1 mb-6">
       {Array.from({ length: 5 }).map((_, i) => (

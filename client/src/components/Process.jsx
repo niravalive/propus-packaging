@@ -48,7 +48,7 @@ const Process = () => {
             >
               {/* Connector Line (hidden on mobile, visible on lg) */}
               {index !== steps.length - 1 && (
-                <div className="hidden lg:block absolute top-[32px] left-[50%] w-full h-[3px] bg-gray-100/50 overflow-hidden -z-0">
+                <div className="hidden lg:block absolute top-[2rem] left-[50%] w-full h-[0.1875rem] bg-gray-100/50 overflow-hidden -z-0">
                   <motion.div 
                     initial={{ width: 0 }}
                     whileInView={{ width: '100%' }}
