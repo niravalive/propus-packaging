@@ -183,7 +183,7 @@ const ManufacturingProcessPage = () => {
             <span className="inline-block px-4 py-1.5 bg-accent-600/20 text-accent-400 text-[0.625rem] font-bold tracking-[0.25em] uppercase mb-6 rounded-full border border-accent-600/30">
               How We Build
             </span>
-            <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-6 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
               Manufacturing <span className="text-accent-400">Process</span>
             </h1>
             <p className="text-xl text-primary-200 font-light leading-relaxed max-w-2xl mx-auto">

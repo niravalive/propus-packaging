@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Send, Building, PackageSearch, Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -11,6 +11,7 @@ const Contact = () => {
   const [selectedProduct, setSelectedProduct] = useState('');
   const [availableSizes, setAvailableSizes] = useState([]);
   const [selectedSize, setSelectedSize] = useState('');
+  const formRef = useRef(null);
 
   useEffect(() => {
     if (location.state) {
@@ -22,6 +23,12 @@ const Contact = () => {
       if (location.state.size) {
         setSelectedSize(location.state.size);
       }
+      // On mobile, scroll to the form section after a short delay
+      setTimeout(() => {
+        if (window.innerWidth < 1024 && formRef.current) {
+          formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 400);
     }
   }, [location.state]);
 
@@ -140,7 +147,7 @@ const Contact = () => {
             </div>
 
             {/* Right Column: Inquiry Form */}
-            <div className="lg:col-span-2 p-8 sm:p-10">
+            <div ref={formRef} className="lg:col-span-2 p-8 sm:p-10">
               <form onSubmit={handleSubmit}>
                 <h2 className="text-2xl font-bold text-primary-900 mb-8 border-b border-gray-100 pb-4">
                   Send us a Message

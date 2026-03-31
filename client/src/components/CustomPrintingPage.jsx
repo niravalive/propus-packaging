@@ -51,7 +51,7 @@ const CustomPrintingPage = () => {
       {floatingImages.map((src, index) => (
         <motion.div
           key={index}
-          className="absolute z-20 w-32 h-32 md:w-48 md:h-48 pointer-events-none"
+          className="absolute z-20 w-16 h-16 sm:w-24 sm:h-24 md:w-48 md:h-48 pointer-events-none opacity-60 md:opacity-100"
           style={{
             top: positions[index].top,
             left: positions[index].left
@@ -84,12 +84,12 @@ const CustomPrintingPage = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center"
         >
-          <h1 className="text-4xl md:text-7xl font-black text-white mb-10 drop-shadow-lg uppercase tracking-wider">
+          <h1 className="text-3xl sm:text-4xl md:text-7xl font-black text-[#01a2f3] mb-6 md:mb-10 drop-shadow-lg uppercase tracking-wider">
             Custom Printing
           </h1>
           <Link
             to="/quote"
-            className="group relative inline-flex items-center gap-4 bg-accent-600 hover:bg-accent-700 text-white px-10 py-5 md:px-14 md:py-7 rounded-full font-black text-xl md:text-3xl shadow-[0_20px_50px_rgba(255,255,255,0.2)] hover:shadow-accent-500/40 transition-all duration-300"
+            className="group relative inline-flex items-center justify-center gap-3 sm:gap-4 bg-accent-600 hover:bg-accent-700 text-white px-6 py-4 sm:px-10 sm:py-5 md:px-14 md:py-7 rounded-full font-black text-lg sm:text-xl md:text-3xl shadow-[0_20px_50px_rgba(255,255,255,0.2)] hover:shadow-accent-500/40 transition-all duration-300 w-[18rem] sm:w-auto"
           >
             <span>Get A Quote</span>
             <ArrowRight size={32} className="group-hover:translate-x-2 transition-transform duration-300" />

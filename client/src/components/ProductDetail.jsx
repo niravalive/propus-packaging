@@ -81,23 +81,54 @@ const ProductDetail = () => {
     }, 4000);
   };
 
-  const toggleModal = () => {
-    const newState = !isModalOpen;
-    setIsModalOpen(newState);
+  const triggerCloseModal = () => {
+    setIsModalOpen(false);
     setZoomLevel(1);
-    
-    if (newState) {
+    document.body.style.overflow = 'unset';
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 4000);
+  };
+
+  const toggleModal = () => {
+    if (!isModalOpen) {
+      window.history.pushState({ modalOpen: true }, '');
+      setIsModalOpen(true);
+      setZoomLevel(1);
       document.body.style.overflow = 'hidden';
       setIsPaused(true);
       if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
     } else {
-      document.body.style.overflow = 'unset';
-      // Reset pause timeout to resume later
-      pauseTimeoutRef.current = setTimeout(() => {
-        setIsPaused(false);
-      }, 4000);
+      triggerCloseModal();
+      if (window.history.state?.modalOpen) {
+        window.history.back();
+      }
     }
   };
+
+  useEffect(() => {
+    const handlePopState = () => {
+      if (isModalOpen) triggerCloseModal();
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [isModalOpen]);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!isModalOpen) return;
+      if (e.key === 'Escape') {
+        toggleModal();
+      } else if (e.key === 'ArrowLeft') {
+        handleArrowNav('prev');
+      } else if (e.key === 'ArrowRight') {
+        handleArrowNav('next');
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isModalOpen, product]);
 
   const handleZoom = (type) => {
     setZoomLevel(prev => {
@@ -145,7 +176,7 @@ const ProductDetail = () => {
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image Gallery */}
-            <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-6 lg:h-[37.5rem]">
+            <div className="flex flex-col-reverse md:flex-row gap-4 md:gap-6 lg:h-[37.5rem] overflow-hidden min-w-0">
 
               {/* Thumbnails Sidebar */}
               <div className="flex md:flex-col gap-2 shrink-0 relative items-center">
@@ -171,7 +202,7 @@ const ProductDetail = () => {
               {/* Main Image */}
               <div
                 onClick={toggleModal}
-                className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex items-center justify-center p-8 lg:p-12 relative group min-h-[18.75rem] md:min-h-0 bg-[#ffffff] cursor-zoom-in"
+                className="flex-1 min-w-0 rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex items-center justify-center p-4 sm:p-8 lg:p-12 relative group min-h-[18.75rem] md:min-h-0 bg-[#ffffff] cursor-zoom-in"
                 style={{ backgroundColor: '#ffffff' }}
               >
                 <AnimatePresence mode="wait">
@@ -299,7 +330,7 @@ const ProductDetail = () => {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
           <Link
             to="/manufacturing-process"
-            className="bg-accent-600 hover:bg-accent-700 text-white px-10 py-5 md:px-14 md:py-7 rounded-full font-black text-lg md:text-2xl shadow-2xl hover:shadow-accent-500/20 transition-all duration-300 whitespace-nowrap flex items-center gap-4 group/btn border-4 border-white"
+            className="bg-accent-600 hover:bg-accent-700 text-white px-6 py-4 sm:px-10 sm:py-5 md:px-14 md:py-7 rounded-full font-black text-sm sm:text-lg md:text-2xl shadow-2xl hover:shadow-accent-500/20 transition-all duration-300 whitespace-nowrap flex items-center gap-2 md:gap-4 group/btn border-4 border-white"
           >
             <span>View Manufacturing Process</span>
             <ArrowRight size={28} className="group-hover/btn:translate-x-2 transition-transform duration-300" />
@@ -362,6 +393,17 @@ const ProductDetail = () => {
 
             {/* Modal Image Container */}
             <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+              {/* Left Arrow */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleArrowNav('prev');
+                }}
+                className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-[110] w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all duration-300"
+              >
+                <ChevronLeft size={32} />
+              </button>
+
               <motion.img
                 key={activeImage}
                 src={activeImage}
@@ -373,6 +415,17 @@ const ProductDetail = () => {
                 drag={zoomLevel > 1}
                 dragConstraints={{ left: -500, right: 500, top: -500, bottom: 500 }}
               />
+
+              {/* Right Arrow */}
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleArrowNav('next');
+                }}
+                className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-[110] w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md flex items-center justify-center text-white transition-all duration-300"
+              >
+                <ChevronRight size={32} />
+              </button>
             </div>
           </motion.div>
         )}

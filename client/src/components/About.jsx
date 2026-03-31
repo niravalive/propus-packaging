@@ -7,10 +7,8 @@ const About = () => {
     <div className="pt-0 bg-white">
       {/* Hero */}
       <section className="bg-primary-950 py-32 text-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/assets/Ecotellus%20Web%20Images/General/MIT09419.JPG')] bg-cover bg-center opacity-80"></div>
-        <div className="absolute inset-0 bg-primary-950/60"></div>
         <div className="relative z-10 max-w-4xl mx-auto">
-          <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-6 tracking-tight">Industrial Excellence in <span className="text-accent-500">Packaging</span></h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">Industrial Excellence in <span className="text-accent-500">Packaging</span></h1>
           <p className="text-xl text-primary-200 font-light leading-relaxed">
             Engineering sustainable, high-volume packaging solutions for global enterprises,
             backed by world-class infrastructure and stringent quality controls.
@@ -20,20 +18,24 @@ const About = () => {
 
       {/* What We Deliver ? Section */}
       <section className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-24">
-        <div className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
-          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 text-center">
-            What We Deliver ?
-          </h2>
-          <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-600 leading-relaxed text-left md:text-justify font-light">
-            <p>
-              For your customer now its our duty to fulfill your requirement by delivering dust free, bio-degradable, compostable Food &Beverage disposable products. Keeping in mind the health of our end consumer, We prioritise and are focused at maintaining hygiene in our plant area from machineries to co-workers cleanliness and sanitisation, we are highly concerned for taking care of our end consumers as per BRCGS Packaging Standards. With artistic and ecstatic designs & colors,
-            </p>
-            <p>
-              We help brands and brand owners to create a way to communicate by customizing our product with your customer. Design that taps into emotional triggers such as nostalgia, joy, or belonging can evoke robust responses, driving purchase intent and brand affinity. In an era characterized by heightened consumer consciousness, authenticity and transparency are paramount. Packaging that communicates the brand's values, sustainability efforts fosters trust and loyalty.
-            </p>
-            <p>
-              Understanding the emotional landscape of the target audience enables the creation of packaging that fosters authentic connections and cultivates brand loyalty. With our designing team it will be quick and easy for your brand to better align with consumer preferences and market trends.
-            </p>
+        <div className="relative rounded-2xl p-6 md:p-12 shadow-sm border border-primary-900 overflow-hidden bg-primary-950">
+          <div className="absolute inset-0 bg-[url('/assets/Ecotellus%20Web%20Images/General/MIT09419.JPG')] bg-cover bg-center opacity-50"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-950 via-primary-950/60 to-transparent"></div>
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-6 text-center">
+              What We Deliver ?
+            </h2>
+            <div className="max-w-4xl mx-auto space-y-6 text-lg text-primary-100 leading-relaxed text-left md:text-justify font-light">
+              <p>
+                For your customer now its our duty to fulfill your requirement by delivering dust free, bio-degradable, compostable Food &Beverage disposable products. Keeping in mind the health of our end consumer, We prioritise and are focused at maintaining hygiene in our plant area from machineries to co-workers cleanliness and sanitisation, we are highly concerned for taking care of our end consumers as per BRCGS Packaging Standards. With artistic and ecstatic designs & colors,
+              </p>
+              <p>
+                We help brands and brand owners to create a way to communicate by customizing our product with your customer. Design that taps into emotional triggers such as nostalgia, joy, or belonging can evoke robust responses, driving purchase intent and brand affinity. In an era characterized by heightened consumer consciousness, authenticity and transparency are paramount. Packaging that communicates the brand's values, sustainability efforts fosters trust and loyalty.
+              </p>
+              <p>
+                Understanding the emotional landscape of the target audience enables the creation of packaging that fosters authentic connections and cultivates brand loyalty. With our designing team it will be quick and easy for your brand to better align with consumer preferences and market trends.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -59,9 +61,9 @@ const About = () => {
               </li>
             </ul>
           </div>
-            <div className="aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden">
-              <img src="/assets/Rollar/lower/rolling image (24).webp" alt="Factory Floor" className="w-full h-full object-cover transition-all duration-700" />
-            </div>
+          <div className="aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden">
+            <img src="/assets/Rollar/lower/rolling image (24).webp" alt="Factory Floor" className="w-full h-full object-cover transition-all duration-700" />
+          </div>
         </div>
       </section>
 

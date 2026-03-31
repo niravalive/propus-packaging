@@ -36,7 +36,7 @@ function App() {
     });
 
     window.lenis = lenis;
-    
+
     let rafId;
     function raf(time) {
       lenis.raf(time);
@@ -71,8 +71,8 @@ function App() {
               <Route path="/" element={
                 <>
                   <Hero />
-                  <CompanyStats />
                   <Categories />
+                  <CompanyStats />
                   <Features />
                   <Process />
                   <TrustBar />

@@ -34,7 +34,7 @@ const faqs = [
 ];
 
 const FAQ = () => {
-  const [activeTab, setActiveTab] = useState(faqs[0].category);
+  const [activeTab, setActiveTab] = useState('All');
   const [openItems, setOpenItems] = useState({});
 
   const toggleItem = (category, index) => {
@@ -44,7 +44,9 @@ const FAQ = () => {
     }));
   };
 
-  const currentCategoryData = faqs.find(f => f.category === activeTab);
+  const currentCategoryData = activeTab === 'All' 
+    ? { items: faqs.flatMap(f => f.items.map(i => ({ ...i, originalCategory: f.category }))) }
+    : faqs.find(f => f.category === activeTab);
 
   return (
     <div className="pt-0 bg-gray-50 min-h-screen pb-24">
@@ -59,6 +61,14 @@ const FAQ = () => {
       <div className="max-w-[56.25rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-10 relative z-10">
         {/* Tabs */}
         <div className="flex flex-wrap gap-2 mb-8 bg-white p-2 rounded-lg shadow-md border border-gray-200">
+          <button
+            onClick={() => setActiveTab('All')}
+            className={`flex-1 py-3 px-4 rounded text-sm font-bold transition-all ${
+              activeTab === 'All' ? 'bg-primary-900 text-white shadow' : 'text-gray-500 hover:bg-gray-100'
+            }`}
+          >
+            All
+          </button>
           {faqs.map(tab => (
             <button
               key={tab.category}
@@ -75,11 +85,12 @@ const FAQ = () => {
         {/* Accordion */}
         <div className="bg-white rounded-lg shadow-xl border border-gray-200 overflow-hidden mb-16">
           {currentCategoryData.items.map((item, index) => {
-            const isOpen = openItems[`${activeTab}-${index}`];
+            const itemKey = activeTab === 'All' ? `${item.originalCategory}-${index}` : `${activeTab}-${index}`;
+            const isOpen = openItems[itemKey];
             return (
-              <div key={index} className="border-b border-gray-100 last:border-0">
+              <div key={itemKey} className="border-b border-gray-100 last:border-0">
                 <button
-                  onClick={() => toggleItem(activeTab, index)}
+                  onClick={() => toggleItem(activeTab === 'All' ? item.originalCategory : activeTab, index)}
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors focus:outline-none group"
                 >
                   <span className="text-lg font-bold text-primary-900 pr-8 group-hover:text-accent-600 transition-colors">{item.q}</span>

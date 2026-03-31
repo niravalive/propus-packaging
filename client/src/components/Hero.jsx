@@ -22,7 +22,7 @@ const Hero = () => {
               ISO 9001 &amp; FSC Certified
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
               Custom Packaging Solutions for{' '}
               <span className="text-accent-500">Global Brands</span>
             </h1>
@@ -50,7 +50,7 @@ const Hero = () => {
             <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <Package size={20} className="text-accent-500" />
-                <span className="font-medium">MOQ - Lower</span>
+                <span className="font-medium">Lower MOQ</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck size={20} className="text-accent-500" />
@@ -60,7 +60,7 @@ const Hero = () => {
           </motion.div>
 
           {/* ── Right: Composite Hero Images ── */}
-          <div className="flex-1 w-full max-w-xl relative mx-auto lg:ml-auto lg:mr-0 mt-16 lg:mt-0">
+          <div className="flex-1 w-full max-w-xl relative mx-auto lg:ml-auto lg:mr-0 mt-16 lg:mt-0 pb-16 lg:pb-0">
             {/* Main larger image */}
             <motion.div
               className="w-4/5 aspect-square ml-auto relative z-0 bg-gray-200 overflow-hidden shadow-2xl group"
