@@ -12,11 +12,11 @@ const products = [
   },
   {
     id: 2,
-    name: "Cup's Cap",
-    slug: "cups-cap",
+    name: "Paper Lids",
+    slug: "paper-lids",
     image: "/assets/Ecotellus Web Images/Products/Cup's Cap/1.png",
-    images: ["/assets/Ecotellus Web Images/Products/Cup's Cap/1.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/2.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/3.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/4.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/5.png"],
-    sizes: ["Small", "Medium", "Large"]
+    images: ["/assets/Ecotellus Web Images/Products/Cup's Cap/1.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/3.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/4.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/5.png"],
+    sizes: ["Small / 80mm", "Medium / 90mm", "Large / 110mm"]
   },
   {
     id: 3,
@@ -36,10 +36,25 @@ const products = [
   },
   {
     id: 5,
-    name: "Popcorn Tub - red",
-    slug: "popcorn-tub-red",
+    name: "Popcorn Tub",
+    slug: "popcorn-tub",
     image: "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/1.png",
-    images: ["/assets/Ecotellus Web Images/Products/Popcorm Tub - red/1.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/2.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/3.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/4.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/5.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/6.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/7.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/8.png"],
+    images: [
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/1.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/1.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/2.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/2.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/3.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/3.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/4.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/4.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/5.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/5.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/6.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/6.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/7.png", 
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/8.png"
+    ],
     sizes: ["32 oz", "46 oz", "50 oz", "75 oz", "85 oz", "130 oz", "170 oz", "Custom"]
   },
   {
@@ -52,14 +67,6 @@ const products = [
   },
   {
     id: 7,
-    name: "Popcorn Tub - yellow",
-    slug: "popcorn-tub-yellow",
-    image: "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/1.png",
-    images: ["/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/1.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/2.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/3.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/4.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/5.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/6.png"],
-    sizes: ["32 oz", "46 oz", "50 oz", "75 oz", "130 oz", "170 oz"]
-  },
-  {
-    id: 8,
     name: "Straws",
     slug: "straws",
     image: "/assets/Ecotellus Web Images/Products/Straws/1.webp",

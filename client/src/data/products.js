@@ -9,18 +9,27 @@ export const productsData = [
   },
   {
     id: 2,
-    name: "Cup's Cap",
-    slug: "cups-cap",
+    name: "Paper Lids",
+    slug: "paper-lids",
     image: "/assets/Ecotellus Web Images/Products/Cup's Cap/1.png",
-    images: ["/assets/Ecotellus Web Images/Products/Cup's Cap/1.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/2.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/3.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/4.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/5.png"],
-    sizes: ["Small", "Medium", "Large"]
+    images: ["/assets/Ecotellus Web Images/Products/Cup's Cap/1.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/3.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/4.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/5.png"],
+    sizes: ["Small / 80mm", "Medium / 90mm", "Large / 110mm"]
   },
   {
     id: 3,
     name: "Double Wall Ripple Cup",
     slug: "double-wall-ripple-cup",
     image: "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/1.png",
-    images: ["/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/1.png", "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/2.png", "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/3.png", "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/4.png", "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/5.png", "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/6.png", "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/7.png", "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/8.png", "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/9.png"],
+    images: [
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/1.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/2.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/3.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/4.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/5.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/6.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/7.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/8.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/9.png"],
     sizes: ["4 oz", "8 oz", "12 oz", "16 oz", "20 oz", "24 oz", "32 oz", "44 oz", "50 oz"]
   },
   {
@@ -28,15 +37,37 @@ export const productsData = [
     name: "Nacho's Trey",
     slug: "nachos-trey",
     image: "/assets/Ecotellus Web Images/Products/Nacho's Trey/1.png",
-    images: ["/assets/Ecotellus Web Images/Products/Nacho's Trey/1.png", "/assets/Ecotellus Web Images/Products/Nacho's Trey/2.png", "/assets/Ecotellus Web Images/Products/Nacho's Trey/3.png", "/assets/Ecotellus Web Images/Products/Nacho's Trey/4.png", "/assets/Ecotellus Web Images/Products/Nacho's Trey/5.png", "/assets/Ecotellus Web Images/Products/Nacho's Trey/6.png", "/assets/Ecotellus Web Images/Products/Nacho's Trey/7.png"],
+    images: [
+      "/assets/Ecotellus Web Images/Products/Nacho's Trey/1.png",
+      "/assets/Ecotellus Web Images/Products/Nacho's Trey/2.png",
+      "/assets/Ecotellus Web Images/Products/Nacho's Trey/3.png",
+      "/assets/Ecotellus Web Images/Products/Nacho's Trey/4.png",
+      "/assets/Ecotellus Web Images/Products/Nacho's Trey/5.png",
+      "/assets/Ecotellus Web Images/Products/Nacho's Trey/6.png",
+      "/assets/Ecotellus Web Images/Products/Nacho's Trey/7.png"],
     sizes: ["Mini", "Small", "Regular", "Medium", "Large", "XL", "XXL"]
   },
   {
     id: 5,
-    name: "Popcorn Tub - red",
-    slug: "popcorn-tub-red",
+    name: "Popcorn Tub",
+    slug: "popcorn-tub",
     image: "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/1.png",
-    images: ["/assets/Ecotellus Web Images/Products/Popcorm Tub - red/1.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/2.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/3.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/4.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/5.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/6.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/7.png", "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/8.png"],
+    images: [
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/1.png",
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/1.png",
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/2.png",
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/2.png",
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/3.png",
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/3.png",
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/4.png",
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/4.png",
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/5.png",
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/5.png",
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/6.png",
+      "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/6.png",
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/7.png",
+      "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/8.png"
+    ],
     sizes: ["32 oz", "46 oz", "50 oz", "75 oz", "85 oz", "130 oz", "170 oz", "Custom"]
   },
   {
@@ -49,14 +80,6 @@ export const productsData = [
   },
   {
     id: 7,
-    name: "Popcorn Tub - yellow",
-    slug: "popcorn-tub-yellow",
-    image: "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/1.png",
-    images: ["/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/1.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/2.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/3.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/4.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/5.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - yellow/6.png"],
-    sizes: ["32 oz", "46 oz", "50 oz", "75 oz", "130 oz", "170 oz"]
-  },
-  {
-    id: 8,
     name: "Straws",
     slug: "straws",
     image: "/assets/Ecotellus Web Images/Products/Straws/1.webp",

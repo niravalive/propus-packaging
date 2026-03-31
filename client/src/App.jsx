@@ -21,6 +21,7 @@ import CertificationsPage from './components/CertificationsPage';
 import ManufacturingProcessPage from './components/ManufacturingProcessPage';
 import ReviewsPage from './components/ReviewsPage';
 import PoliciesPage from './components/PoliciesPage';
+import CustomPrintingPage from './components/CustomPrintingPage';
 import Lenis from 'lenis';
 
 function App() {
@@ -88,6 +89,7 @@ function App() {
               <Route path="/manufacturing-process" element={<ManufacturingProcessPage />} />
               <Route path="/reviews" element={<ReviewsPage />} />
               <Route path="/policies" element={<PoliciesPage />} />
+              <Route path="/custom-printing" element={<CustomPrintingPage />} />
             </Routes>
           </main>
           <Footer />

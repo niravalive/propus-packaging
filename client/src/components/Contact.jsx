@@ -1,9 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Send, Building, PackageSearch, Mail, Phone, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
+import { productsData } from '../data/products';
+
 const Contact = () => {
+  const location = useLocation();
   const [submitted, setSubmitted] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState('');
+  const [availableSizes, setAvailableSizes] = useState([]);
+  const [selectedSize, setSelectedSize] = useState('');
+
+  useEffect(() => {
+    if (location.state) {
+      if (location.state.product) {
+        setSelectedProduct(location.state.product);
+        const product = productsData.find(p => p.name === location.state.product);
+        setAvailableSizes(product ? product.sizes : []);
+      }
+      if (location.state.size) {
+        setSelectedSize(location.state.size);
+      }
+    }
+  }, [location.state]);
+
+  const handleProductChange = (e) => {
+    const productName = e.target.value;
+    setSelectedProduct(productName);
+    setSelectedSize(''); // Reset size when product changes
+    const product = productsData.find(p => p.name === productName);
+    setAvailableSizes(product ? product.sizes : []);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -146,15 +174,34 @@ const Contact = () => {
                   <PackageSearch size={18} className="text-accent-600" /> Production Requirements
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                  <div className="sm:col-span-2">
-                    <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Product Category</label>
-                    <select className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors appearance-none shadow-sm text-sm">
-                      <option>Select Category </option>
-                      <option>Corrugated Boxes</option>
-                      <option>Rigid Setup Boxes</option>
-                      <option>Eco-Friendly Mailers</option>
-                      <option>Custom Inserts</option>
-                      <option>Other / Custom Project</option>
+                  <div>
+                    <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Select Product *</label>
+                    <select 
+                      value={selectedProduct}
+                      onChange={handleProductChange}
+                      className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors appearance-none shadow-sm text-sm"
+                      required
+                    >
+                      <option value="">Choose a product...</option>
+                      {productsData.map((product) => (
+                        <option key={product.id} value={product.name}>{product.name}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Available Sizes *</label>
+                    <select 
+                      value={selectedSize}
+                      onChange={(e) => setSelectedSize(e.target.value)}
+                      disabled={!selectedProduct}
+                      className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors appearance-none shadow-sm text-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                      required
+                    >
+                      <option value="">{selectedProduct ? 'Select Size' : 'Select a product first'}</option>
+                      {availableSizes.map((size, index) => (
+                        <option key={index} value={size}>{size}</option>
+                      ))}
                     </select>
                   </div>
 

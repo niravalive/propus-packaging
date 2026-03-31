@@ -18,6 +18,26 @@ const About = () => {
         </div>
       </section>
 
+      {/* What We Deliver ? Section */}
+      <section className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-24">
+        <div className="bg-gray-50 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 text-center">
+            What We Deliver ?
+          </h2>
+          <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-600 leading-relaxed text-left md:text-justify font-light">
+            <p>
+              For your customer now its our duty to fulfill your requirement by delivering dust free, bio-degradable, compostable Food &Beverage disposable products. Keeping in mind the health of our end consumer, We prioritise and are focused at maintaining hygiene in our plant area from machineries to co-workers cleanliness and sanitisation, we are highly concerned for taking care of our end consumers as per BRCGS Packaging Standards. With artistic and ecstatic designs & colors,
+            </p>
+            <p>
+              We help brands and brand owners to create a way to communicate by customizing our product with your customer. Design that taps into emotional triggers such as nostalgia, joy, or belonging can evoke robust responses, driving purchase intent and brand affinity. In an era characterized by heightened consumer consciousness, authenticity and transparency are paramount. Packaging that communicates the brand's values, sustainability efforts fosters trust and loyalty.
+            </p>
+            <p>
+              Understanding the emotional landscape of the target audience enables the creation of packaging that fosters authentic connections and cultivates brand loyalty. With our designing team it will be quick and easy for your brand to better align with consumer preferences and market trends.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Infrastructure Section */}
       <section id="infrastructure" className="py-24 max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -31,7 +51,7 @@ const About = () => {
             <ul className="space-y-4 mb-8">
               <li className="flex items-center gap-3">
                 <Factory size={20} className="text-accent-600" />
-                <span className="text-gray-700 font-medium">100,000+ Sq.Ft. Production Space</span>
+                <span className="text-gray-700 font-medium">17,000 Sq.Mtrs. Production Space</span>
               </li>
               <li className="flex items-center gap-3">
                 <Crosshair size={20} className="text-accent-600" />

@@ -24,6 +24,7 @@ const Footer = () => {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'Products', href: '/products' },
+    { name: 'Custom Printing', href: '/custom-printing' },
     { name: 'About Us', href: '/about' },
     { name: 'Contact', href: '/contact' },
   ];

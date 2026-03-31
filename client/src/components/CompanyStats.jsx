@@ -43,7 +43,7 @@ const stats = [
     sublabel: '(Projected for 2025)',
   },
   {
-    value: 25000,
+    value: 17000,
     label: 'Sq.Mtrs of',
     sublabel: 'Factory Area',
   },

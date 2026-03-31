@@ -1,18 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import { Package, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { Package, ChevronUp, ChevronDown, ChevronLeft, ChevronRight, ArrowRight, X, ZoomIn, ZoomOut, ArrowLeft } from 'lucide-react';
 import { productsData } from '../data/products';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const ProductDetail = () => {
   const { slug } = useParams();
+  const [selectedSize, setSelectedSize] = useState(null);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [slideDirection, setSlideDirection] = useState(1);
   const pauseTimeoutRef = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [zoomLevel, setZoomLevel] = useState(1);
 
   useEffect(() => {
     // Instant reset on load
@@ -78,6 +81,32 @@ const ProductDetail = () => {
     }, 4000);
   };
 
+  const toggleModal = () => {
+    const newState = !isModalOpen;
+    setIsModalOpen(newState);
+    setZoomLevel(1);
+    
+    if (newState) {
+      document.body.style.overflow = 'hidden';
+      setIsPaused(true);
+      if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    } else {
+      document.body.style.overflow = 'unset';
+      // Reset pause timeout to resume later
+      pauseTimeoutRef.current = setTimeout(() => {
+        setIsPaused(false);
+      }, 4000);
+    }
+  };
+
+  const handleZoom = (type) => {
+    setZoomLevel(prev => {
+      if (type === 'in') return Math.min(prev + 0.5, 4);
+      if (type === 'out') return Math.max(prev - 0.5, 1);
+      return 1;
+    });
+  };
+
   const activeImage = product?.images?.[activeIndex] || product?.image;
 
   if (loading) {
@@ -101,7 +130,18 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <section className="pt-24 pb-16">
+      {/* Back Button */}
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <Link 
+          to="/products"
+          className="inline-flex items-center gap-2 px-4 py-2 text-primary-600 hover:text-accent-600 font-bold transition-all group"
+        >
+          <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+          Back to Products
+        </Link>
+      </div>
+
+      <section className="pt-8 pb-16">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Image Gallery */}
@@ -129,7 +169,11 @@ const ProductDetail = () => {
               </div>
 
               {/* Main Image */}
-              <div className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex items-center justify-center p-8 lg:p-12 relative group min-h-[300px] md:min-h-0 bg-[#ffffff]" style={{ backgroundColor: '#ffffff' }}>
+              <div
+                onClick={toggleModal}
+                className="flex-1 rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex items-center justify-center p-8 lg:p-12 relative group min-h-[300px] md:min-h-0 bg-[#ffffff] cursor-zoom-in"
+                style={{ backgroundColor: '#ffffff' }}
+              >
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeIndex}
@@ -149,7 +193,10 @@ const ProductDetail = () => {
 
                 {/* Left Arrow */}
                 <button
-                  onClick={() => handleArrowNav('prev')}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleArrowNav('prev');
+                  }}
                   className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-gray-800 hover:text-accent-600 transition-all duration-300"
                 >
                   <ChevronLeft size={24} />
@@ -157,7 +204,10 @@ const ProductDetail = () => {
 
                 {/* Right Arrow */}
                 <button
-                  onClick={() => handleArrowNav('next')}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleArrowNav('next');
+                  }}
                   className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-white/90 hover:bg-white shadow-lg flex items-center justify-center text-gray-800 hover:text-accent-600 transition-all duration-300"
                 >
                   <ChevronRight size={24} />
@@ -180,17 +230,43 @@ const ProductDetail = () => {
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Available Sizes</h3>
                 <div className="flex flex-wrap gap-3">
                   {product.sizes.map((size, index) => (
-                    <div key={index} className="flex items-center gap-2 bg-gray-50 border border-gray-200 rounded-full px-4 py-2">
-                      <Package size={16} className="text-accent-600" />
-                      <span className="font-semibold text-gray-700">{size}</span>
-                    </div>
+                    <button
+                      key={index}
+                      onClick={() => setSelectedSize(size === selectedSize ? null : size)}
+                      className={`flex items-center gap-2 border rounded-full px-4 py-2 transition-all ${
+                        selectedSize === size
+                          ? 'bg-accent-600 border-accent-600 text-white shadow-md'
+                          : 'bg-gray-50 border-gray-200 hover:border-accent-400 text-gray-700'
+                      }`}
+                    >
+                      <Package size={16} className={selectedSize === size ? 'text-white' : 'text-accent-600'} />
+                      <span className="font-semibold">{size}</span>
+                    </button>
                   ))}
                 </div>
               </div>
 
+              {/* Custom Printing Awareness (Popcorn Tub Only) */}
+              {product.slug === 'popcorn-tub' && (
+                <div className="mb-8">
+                  <Link 
+                    to="/custom-printing"
+                    className="inline-flex items-center gap-2 bg-accent-50 text-accent-700 border border-accent-200 px-4 py-2 rounded-full text-sm font-bold hover:bg-accent-100 transition-colors group"
+                  >
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-500"></span>
+                    </span>
+                    Custom Printing Available
+                    <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              )}
+
               {/* CTA */}
               <Link
                 to="/contact"
+                state={{ product: product.name, size: selectedSize }}
                 className="inline-block bg-accent-600 hover:bg-accent-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition-colors shadow-md hover:shadow-lg"
               >
                 Get a Quote
@@ -246,7 +322,63 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        <style>{`
+        {/* Image Modal */}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-4 md:p-8"
+          >
+            {/* Close Button */}
+            <button
+              onClick={toggleModal}
+              className="absolute top-6 right-6 z-[110] p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-colors"
+            >
+              <X size={32} />
+            </button>
+
+            {/* Zoom Controls */}
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[110] flex items-center gap-4 bg-white/10 backdrop-blur-lg px-6 py-3 rounded-full border border-white/20">
+              <button
+                onClick={() => handleZoom('out')}
+                className="text-white hover:text-accent-400 transition-colors"
+                disabled={zoomLevel <= 1}
+              >
+                <ZoomOut size={24} />
+              </button>
+              <span className="text-white font-mono min-w-[3rem] text-center">
+                {Math.round(zoomLevel * 100)}%
+              </span>
+              <button
+                onClick={() => handleZoom('in')}
+                className="text-white hover:text-accent-400 transition-colors"
+                disabled={zoomLevel >= 4}
+              >
+                <ZoomIn size={24} />
+              </button>
+            </div>
+
+            {/* Modal Image Container */}
+            <div className="relative w-full h-full flex items-center justify-center overflow-hidden">
+              <motion.img
+                key={activeImage}
+                src={activeImage}
+                alt={product.name}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: zoomLevel, opacity: 1 }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                className="max-w-full max-h-full object-contain cursor-grab active:cursor-grabbing"
+                drag={zoomLevel > 1}
+                dragConstraints={{ left: -500, right: 500, top: -500, bottom: 500 }}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <style>{`
           .roller-track-rtl,
           .roller-track-ltr {
             display: inline-flex;

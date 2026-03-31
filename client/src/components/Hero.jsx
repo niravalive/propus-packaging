@@ -50,7 +50,7 @@ const Hero = () => {
             <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 text-sm text-gray-500">
               <div className="flex items-center gap-2">
                 <Package size={20} className="text-accent-500" />
-                <span className="font-medium">MOQ Starts at 1,000</span>
+                <span className="font-medium">MOQ - Lower</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck size={20} className="text-accent-500" />
