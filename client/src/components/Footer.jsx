@@ -101,13 +101,13 @@ const Footer = () => {
                   <MapPin size={16} className="text-accent-600 flex-shrink-0 mt-0.5" />
                   <span className="leading-snug">Plot No.A 1-A 10, Silk Heritage Industrial Society, NH-53, Unn, Surat-394230</span>
                 </div>
-                <a href="tel:+441233234558" className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent-600 transition-colors">
+                <a href="tel:+917874827277" className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent-600 transition-colors">
                   <Phone size={16} className="text-accent-600 flex-shrink-0" />
-                  +44 1233 234 558
+                  +91 78748 27277
                 </a>
-                <a href="mailto:ecotellus9@gmail.com" className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent-600 transition-colors">
+                <a href="mailto:info@ecotellus.com" className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent-600 transition-colors">
                   <Mail size={16} className="text-accent-600 flex-shrink-0" />
-                  ecotellus9@gmail.com
+                  info@ecotellus.com
                 </a>
               </div>
             </div>

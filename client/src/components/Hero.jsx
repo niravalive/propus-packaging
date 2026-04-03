@@ -83,16 +83,11 @@ const Hero = () => {
 
             {/* Floating smaller image */}
             <motion.div
-              className="absolute left-0 -bottom-10 lg:-bottom-16 w-[45%] max-w-[18.75rem] z-20 bg-white p-4 shadow-[0_20px_50px_rgba(34,197,94,0.3)] hover:shadow-2xl flex items-center justify-center overflow-hidden group/small transition-all duration-500"
+              className="absolute left-0 -bottom-10 lg:-bottom-16 w-[45%] max-w-[18.75rem] z-20 bg-white p-4 border-[8px] border-white shadow-xl hover:shadow-2xl flex items-center justify-center overflow-hidden group/small transition-all duration-500"
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              {/* Green Overlay - hex code #bcd700 at 50% opacity */}
-              <div
-                className="absolute inset-0 z-10 pointer-events-none group-hover/small:opacity-0 transition-opacity duration-500"
-                style={{ backgroundColor: '#21c55e80' }}
-              ></div>
               <img
                 src="/assets/Ecotellus Web Images/Products/Popcorm Tub - red/2.png"
                 alt="Product Sample"

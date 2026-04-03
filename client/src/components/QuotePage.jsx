@@ -22,7 +22,7 @@ const QuotePage = () => {
         >
           {/* Phone */}
           <a
-            href="tel:+441233234558"
+            href="tel:+917874827277"
             className="flex items-center gap-5 p-6 rounded-xl border border-gray-200 hover:border-accent-500 hover:shadow-lg transition-all group bg-gray-50 hover:bg-accent-50"
           >
             <div className="w-14 h-14 rounded-full bg-accent-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -30,13 +30,13 @@ const QuotePage = () => {
             </div>
             <div>
               <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-1">Call Us</p>
-              <p className="text-xl font-bold text-primary-900 group-hover:text-accent-600 transition-colors">+44 1233 234 558</p>
+              <p className="text-xl font-bold text-primary-900 group-hover:text-accent-600 transition-colors">+91 78748 27277</p>
             </div>
           </a>
 
           {/* Email */}
           <a
-            href="mailto:ecotellus9@gmail.com"
+            href="mailto:info@ecotellus.com"
             className="flex items-center gap-5 p-6 rounded-xl border border-gray-200 hover:border-accent-500 hover:shadow-lg transition-all group bg-gray-50 hover:bg-accent-50"
           >
             <div className="w-14 h-14 rounded-full bg-accent-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -44,7 +44,7 @@ const QuotePage = () => {
             </div>
             <div>
               <p className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-1">Email Us</p>
-              <p className="text-xl font-bold text-primary-900 group-hover:text-accent-600 transition-colors">ecotellus9@gmail.com</p>
+              <p className="text-xl font-bold text-primary-900 group-hover:text-accent-600 transition-colors">info@ecotellus.com</p>
             </div>
           </a>
 

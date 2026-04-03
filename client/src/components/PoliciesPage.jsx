@@ -133,7 +133,7 @@ const PoliciesPage = () => {
               title="6. Data Retention"
               content={
                 <p className="leading-relaxed">
-                  We retain your personal information only for as long as reasonably necessary to fulfill the purposes for which it was collected, including satisfying legal, accounting, or reporting requirements. For B2B clients, transactional data is retained for a minimum of 7 years in compliance with tax and trade regulations. You may request deletion of your personal data at any time by contacting us at <a href="mailto:ecotellus9@gmail.com" className="text-accent-600 hover:underline font-medium">ecotellus9@gmail.com</a>.
+                  We retain your personal information only for as long as reasonably necessary to fulfill the purposes for which it was collected, including satisfying legal, accounting, or reporting requirements. For B2B clients, transactional data is retained for a minimum of 7 years in compliance with tax and trade regulations. You may request deletion of your personal data at any time by contacting us at <a href="mailto:info@ecotellus.com" className="text-accent-600 hover:underline font-medium">info@ecotellus.com</a>.
                 </p>
               }
             />
@@ -167,7 +167,7 @@ const PoliciesPage = () => {
                       <span><strong>Right to Data Portability:</strong> Request transfer of your data to another organization.</span>
                     </li>
                   </ul>
-                  <p className="mt-4">To exercise any of these rights, please contact us at <a href="mailto:ecotellus9@gmail.com" className="text-accent-600 hover:underline font-medium">ecotellus9@gmail.com</a>.</p>
+                  <p className="mt-4">To exercise any of these rights, please contact us at <a href="mailto:info@ecotellus.com" className="text-accent-600 hover:underline font-medium">info@ecotellus.com</a>.</p>
                 </>
               }
             />
@@ -318,7 +318,7 @@ const PoliciesPage = () => {
                 If you have any questions about our Privacy Policy or Terms & Conditions, please don't hesitate to reach out.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href="mailto:ecotellus9@gmail.com"
+                <a href="mailto:info@ecotellus.com"
                   className="inline-flex items-center gap-2 bg-accent-600 hover:bg-accent-700 text-white font-semibold py-3 px-6 rounded-xl transition-all text-sm shadow-sm hover:shadow">
                   Email Us
                 </a>

@@ -18,14 +18,19 @@ const About = () => {
 
       {/* What We Deliver ? Section */}
       <section className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 mt-16 md:mt-24">
-        <div className="relative rounded-2xl p-6 md:p-12 shadow-sm border border-primary-900 overflow-hidden bg-primary-950">
-          <div className="absolute inset-0 bg-[url('/assets/Ecotellus%20Web%20Images/General/MIT09419.JPG')] bg-cover bg-center opacity-50"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-primary-950 via-primary-950/60 to-transparent"></div>
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-6 text-center">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
+          <div className="w-full lg:w-2/5 rounded-2xl overflow-hidden shadow-2xl relative group">
+            <img
+              src="/assets/WhatsApp Image 2026-04-03 at 18.07.26.jpeg"
+              alt="Quality Packaging Delivery"
+              className="w-full aspect-square object-cover transform transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+          <div className="w-full lg:w-3/5">
+            <h2 className="text-3xl md:text-4xl font-black text-primary-900 mb-6">
               What We Deliver ?
             </h2>
-            <div className="max-w-4xl mx-auto space-y-6 text-lg text-primary-100 leading-relaxed text-left md:text-justify font-light">
+            <div className="space-y-6 text-lg text-gray-600 leading-relaxed text-left font-light">
               <p>
                 For your customer now its our duty to fulfill your requirement by delivering dust free, bio-degradable, compostable Food &Beverage disposable products. Keeping in mind the health of our end consumer, We prioritise and are focused at maintaining hygiene in our plant area from machineries to co-workers cleanliness and sanitisation, we are highly concerned for taking care of our end consumers as per BRCGS Packaging Standards. With artistic and ecstatic designs & colors,
               </p>
@@ -39,11 +44,43 @@ const About = () => {
           </div>
         </div>
       </section>
+      
+      {/* Our Founders Section */}
+      <section className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-24 mb-8">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="order-2 lg:order-1">
+            <h2 className="text-4xl font-black text-primary-900 mb-8 relative inline-block">
+              Our Founders
+              <div className="absolute -bottom-2 left-0 w-1/3 h-1.5 bg-accent-500 rounded-full"></div>
+            </h2>
+            <div className="space-y-6 text-xl text-gray-700 leading-relaxed font-light">
+              <p>
+                Founded on the principles of industrial excellence and sustainable innovation, our visionary leadership established Ecotellus to set new global benchmarks in the packaging industry.
+              </p>
+              <p>
+                With a focus on precision manufacturing and hygiene standards, our founders continue to lead with a commitment to environmental stewardship and client-centric solutions, ensuring that every product we deliver supports the growth and integrity of your brand.
+              </p>
+            </div>
+          </div>
+          <div className="order-1 lg:order-2 group">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white transform transition-transform duration-500 hover:rotate-1">
+              <img 
+                src="/assets/ceo image.webp" 
+                alt="Our CEO" 
+                className="w-full aspect-[4/3] object-cover" 
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Infrastructure Section */}
       <section id="infrastructure" className="py-24 max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
+          <div className="aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden order-1">
+            <img src="/assets/Rollar/lower/rolling image (24).webp" alt="Factory Floor" className="w-full h-full object-cover transition-all duration-700 hover:scale-105" />
+          </div>
+          <div className="order-2">
             <span className="inline-block px-3 py-1 bg-gray-100 text-primary-900 font-bold text-xs uppercase tracking-widest mb-6">Our Infrastructure</span>
             <h2 className="text-4xl font-black text-primary-900 mb-6">State-of-the-Art Manufacturing.</h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6 font-light">
@@ -60,9 +97,6 @@ const About = () => {
                 <span className="text-gray-700 font-medium">Fully Automated Inline Printing & Glueing</span>
               </li>
             </ul>
-          </div>
-          <div className="aspect-[4/3] bg-gray-100 rounded-xl overflow-hidden">
-            <img src="/assets/Rollar/lower/rolling image (24).webp" alt="Factory Floor" className="w-full h-full object-cover transition-all duration-700" />
           </div>
         </div>
       </section>
