@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden bg-gray-50">
+    <section className="relative pt-20 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
 
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
@@ -60,43 +60,70 @@ const Hero = () => {
           </motion.div>
 
           {/* ── Right: Composite Hero Images ── */}
-          <div className="flex-1 w-full max-w-xl relative mx-auto lg:ml-auto lg:mr-0 mt-16 lg:mt-0 pb-16 lg:pb-0">
-            {/* Main larger image */}
-            <motion.div
-              className="w-4/5 aspect-square ml-auto relative z-0 bg-gray-200 overflow-hidden shadow-2xl group"
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-            >
-              {/* Blue Overlay - hex code #01a2d3 at 50% opacity */}
-              <div
-                className="absolute inset-0 z-10 pointer-events-none group-hover:opacity-0 transition-opacity duration-500"
-                style={{ backgroundColor: '#01a2d380' }}
-              ></div>
-              <img
-                src="/assets/Rollar/lower/rolling image (1).webp"
-                alt="Factory Process"
-                style={{ filter: 'grayscale(30%)' }}
-                className="w-full h-full object-cover hover:scale-105 group-hover:!grayscale-0 transition-all duration-500"
-              />
-            </motion.div>
+          <div className="flex-1 w-full max-w-xl relative mx-auto lg:ml-auto lg:mr-0 mt-16 md:mt-24 lg:mt-0 flex gap-4 sm:gap-6 min-h-[500px]">
 
-            {/* Floating smaller image */}
-            <motion.div
-              className="absolute left-0 -bottom-10 lg:-bottom-16 w-[45%] max-w-[18.75rem] z-20 bg-white p-4 border-[8px] border-white shadow-xl hover:shadow-2xl flex items-center justify-center overflow-hidden group/small transition-all duration-500"
-              initial={{ y: 30, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-            >
-              <img
-                src="/assets/Ecotellus Web Images/Products/Popcorm Tub - red/2.png"
-                alt="Product Sample"
-                style={{ filter: 'grayscale(30%)' }}
-                className="w-full h-auto object-contain hover:scale-105 group-hover/small:!grayscale-0 transition-all duration-500 relative"
-              />
-            </motion.div>
+            {/* Left Column */}
+            <div className="flex-1 flex flex-col gap-4 sm:gap-6 pt-12 sm:pt-20">
+              {/* Top Left: Small Product */}
+              <motion.div
+                className="w-10/12 ml-auto aspect-[4/3] rounded-3xl overflow-hidden shadow-lg"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <img
+                  src="/assets/Ecotellus Web Images/Products/Burger Box/1.png"
+                  alt="Premium Product Sample"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-700"
+                />
+              </motion.div>
+
+              {/* Bottom Left: Big Factory Image */}
+              <motion.div
+                className="w-full aspect-square sm:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                <img
+                  src="/assets/Ecotellus Web Images/Factory /factory 2.webp"
+                  alt="Factory Process"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </motion.div>
+            </div>
+
+            {/* Right Column */}
+            <div className="flex-1 flex flex-col gap-4 sm:gap-6 pb-12 sm:pb-20">
+              {/* Top Right: Custom Image */}
+              <motion.div
+                className="w-full aspect-[3/4] sm:aspect-[2/3] rounded-3xl overflow-hidden shadow-2xl relative"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+              >
+                <img
+                  src="/assets/WhatsApp Image 2026-04-03 at 18.07.26.jpeg"
+                  alt="Quality Packaging Production"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </motion.div>
+
+              {/* Bottom Right: Small Product */}
+              <motion.div
+                className="w-10/12 mr-auto aspect-square rounded-3xl overflow-hidden shadow-lg"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                <img
+                  src="/assets/Ecotellus Web Images/Products/Popcorm Tub - red/2.png"
+                  alt="Product Image"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-700"
+                />
+              </motion.div>
+            </div>
           </div>
-
         </div>
       </div>
     </section>
