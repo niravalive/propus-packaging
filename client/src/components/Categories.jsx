@@ -55,11 +55,11 @@ const Categories = () => {
             >
               <Link to={`/product/${product.slug}`} className="block">
                 {/* Image */}
-                <div className={`relative h-64 overflow-hidden flex items-center justify-center border-b border-primary-700/50 bg-[#ffffff] ${product.slug === 'popcorn-tub-long' ? 'p-0' : 'p-0'}`} style={{ backgroundColor: '#ffffff' }}>
+                <div className={`relative h-64 overflow-hidden flex items-center justify-center border-b border-primary-700/50 bg-[#ffffff] ${product.slug === 'popcorn-pouch' ? 'p-0' : 'p-0'}`} style={{ backgroundColor: '#ffffff' }}>
                   <img
                     src={product.image}
                     alt={product.name}
-                    className={`transition-transform duration-700 group-hover:scale-110 ${product.slug === 'popcorn-tub-long' ? 'w-auto h-full object-contain scale-99' : 'w-full h-full object-cover'}`}
+                    className={`transition-transform duration-700 group-hover:scale-110 ${product.slug === 'popcorn-pouch' ? 'w-auto h-full object-contain scale-99' : 'w-full h-full object-cover'}`}
                   />
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-primary-950/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 

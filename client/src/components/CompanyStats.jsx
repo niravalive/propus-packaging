@@ -66,10 +66,10 @@ const CompanyStats = () => {
           className="text-center mb-14"
         >
           <h2 className="text-4xl sm:text-5xl font-black mb-4 text-primary-950 leading-tight">
-            Built for <span className="text-accent-600">Scale</span>
+            Built for <span className="text-accent-600">Scale</span>, Speed &amp; Sustainability
           </h2>
           <p className="text-primary-500 max-w-2xl mx-auto text-lg font-light">
-            Decades of expertise in paper packaging, powered by world-class infrastructure and a dedicated workforce.
+            Our facility is built for scale, speed and sustainability — powered by world-class infrastructure and a dedicated workforce.
           </p>
         </motion.div>
 

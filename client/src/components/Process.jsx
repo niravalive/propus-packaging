@@ -7,7 +7,7 @@ const Process = () => {
     {
       icon: PenTool,
       title: 'Design & Prototyping',
-      description: 'Our in-house structural engineers map out your requirements to create an exact structural prototype.'
+      description: "Whether it's a bespoke cinema tub for a summer blockbuster or a high-performance ripple wall for a global franchise, we turn your brand specs into production-ready reality."
     },
     {
       icon: CheckCircle,

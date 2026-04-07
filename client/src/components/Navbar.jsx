@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import logoImage from '../assets/ecotellus-logo.png';
 
 const Navbar = () => {
@@ -12,6 +11,7 @@ const Navbar = () => {
     { name: 'Home', path: '/' },
     { name: 'Products', path: '/products' },
     { name: 'About Us', path: '/about' },
+    { name: 'Blogs', path: '/blogs' },
     { name: 'Contact', path: '/contact' },
   ];
 
@@ -24,9 +24,11 @@ const Navbar = () => {
     <header className="fixed top-0 w-full z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-gray-200 shadow-sm">
       <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center flex-shrink-0">
-            <img src={logoImage} alt="ecotellus Packaging Logo" className="h-10 w-auto" />
+          <Link to="/" className="flex flex-col items-center justify-center -ml-2">
+            <img src={logoImage} alt="ecotellus Packaging Logo" className="h-10 md:h-12 w-auto object-contain" />
+            <span className="text-[0.45rem] md:text-[0.55rem] font-black uppercase tracking-[0.2em] text-accent-600 mt-1 leading-none">
+              Reliability · Capacity · Compliance
+            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -37,17 +39,16 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`relative py-1 text-sm font-bold uppercase tracking-widest transition-all duration-300 group ${
-                    isActive ? 'text-accent-600' : 'text-primary-900 hover:text-accent-600'
-                  }`}
+                  className={`relative py-1 text-sm font-bold uppercase tracking-widest transition-all duration-300 group ${isActive ? 'text-accent-600' : 'text-primary-900 hover:text-accent-600'
+                    }`}
                   style={isActive ? { textShadow: '0 0 1rem rgba(188, 215, 0, 0.3)' } : {}}
                 >
                   {item.name}
-                  {/* Hover Underline: Subtle and Soft */}
+                  {/* Hover Underline */}
                   {!isActive && (
                     <span className="absolute bottom-0 left-0 w-0 h-[0.125rem] bg-accent-500/30 transition-all duration-500 ease-out group-hover:w-full" />
                   )}
-                  {/* Active Underline: Solid and Animated */}
+                  {/* Active Underline */}
                   {isActive && (
                     <span className="absolute bottom-0 left-0 right-0 h-[0.1875rem] bg-accent-600 rounded-full" />
                   )}
@@ -57,16 +58,22 @@ const Navbar = () => {
           </nav>
 
           {/* CTA & Mobile Toggle */}
-          <div className="flex items-center gap-4">
-            <a 
-              href="/assets/Catalouge.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="hidden md:flex bg-accent-600 hover:bg-accent-700 text-white px-6 py-2.5 rounded text-sm font-bold uppercase tracking-wider transition-colors shadow-sm"
+          <div className="flex items-center gap-3">
+            <a
+              href="/assets/Catalouge.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex bg-white hover:bg-gray-50 border border-gray-300 hover:border-gray-400 text-gray-900 px-5 py-2.5 rounded text-sm font-bold uppercase tracking-wider transition-colors shadow-sm"
             >
               Catalogue
             </a>
-            
+            <Link
+              to="/contact"
+              className="hidden md:flex bg-accent-600 hover:bg-accent-700 text-white px-5 py-2.5 rounded text-sm font-bold uppercase tracking-wider transition-colors shadow-sm"
+            >
+              Get a Quote
+            </Link>
+
             <button
               onClick={() => setIsMobileOpen(!isMobileOpen)}
               className="lg:hidden p-2 text-primary-900 hover:text-accent-600 transition-colors"
@@ -85,22 +92,29 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`px-4 py-3 font-bold uppercase tracking-wide rounded transition-colors ${
-                    isActive ? 'bg-accent-50 text-accent-600' : 'text-primary-900 hover:bg-gray-50 hover:text-accent-600'
-                  }`}
+                  className={`px-4 py-3 font-bold uppercase tracking-wide rounded transition-colors ${isActive ? 'bg-accent-50 text-accent-600' : 'text-primary-900 hover:bg-gray-50 hover:text-accent-600'
+                    }`}
                 >
                   {item.name}
                 </Link>
               );
             })}
-            <a 
-              href="/assets/Catalouge.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="mt-4 mx-4 bg-accent-600 text-white px-4 py-3 rounded text-center font-bold uppercase tracking-wider hover:bg-accent-700 transition-colors"
-            >
-              Catalogue
-            </a>
+            <div className="flex flex-col gap-2 mt-4 mx-4">
+              <a
+                href="/assets/Catalouge.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white border border-gray-300 text-gray-900 px-4 py-3 rounded text-center font-bold uppercase tracking-wider hover:bg-gray-50 transition-colors"
+              >
+                Catalogue
+              </a>
+              <Link
+                to="/contact"
+                className="bg-accent-600 text-white px-4 py-3 rounded text-center font-bold uppercase tracking-wider hover:bg-accent-700 transition-colors"
+              >
+                Get a Quote
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -109,4 +123,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

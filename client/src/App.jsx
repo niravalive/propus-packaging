@@ -23,6 +23,9 @@ import ManufacturingProcessPage from './components/ManufacturingProcessPage';
 import ReviewsPage from './components/ReviewsPage';
 import PoliciesPage from './components/PoliciesPage';
 import CustomPrintingPage from './components/CustomPrintingPage';
+import BlogsPage from './components/BlogsPage';
+import BlogSection from './components/BlogSection';
+import BlogPostDetail from './components/BlogPostDetail';
 import PageTransition from './components/PageTransition';
 import Lenis from 'lenis';
 
@@ -92,6 +95,7 @@ function AnimatedRoutes() {
             <Process />
             <TrustBar />
             <Reviews />
+            <BlogSection />
           </PageTransition>
         } />
         <Route path="/product/:slug" element={<PageTransition><ProductDetail /></PageTransition>} />
@@ -105,6 +109,8 @@ function AnimatedRoutes() {
         <Route path="/reviews" element={<PageTransition><ReviewsPage /></PageTransition>} />
         <Route path="/policies" element={<PageTransition><PoliciesPage /></PageTransition>} />
         <Route path="/custom-printing" element={<PageTransition><CustomPrintingPage /></PageTransition>} />
+        <Route path="/blogs" element={<PageTransition><BlogsPage /></PageTransition>} />
+        <Route path="/blog/:slug" element={<PageTransition><BlogPostDetail /></PageTransition>} />
       </Routes>
     </AnimatePresence>
   );

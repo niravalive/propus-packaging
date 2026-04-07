@@ -3,22 +3,25 @@ export const productsData = [
     id: 1,
     name: "Burger Box",
     slug: "burger-box",
-    image: "/assets/Ecotellus Web Images/Products/Burger Box/1.png",
-    images: ["/assets/Ecotellus Web Images/Products/Burger Box/1.png", "/assets/Ecotellus Web Images/Products/Burger Box/2.png", "/assets/Ecotellus Web Images/Products/Burger Box/3.png", "/assets/Ecotellus Web Images/Products/Burger Box/4.png", "/assets/Ecotellus Web Images/Products/Burger Box/5.png", "/assets/Ecotellus Web Images/Products/Burger Box/6.png"],
+    category: "coffee",
+    image: "/assets/Ecotellus Web Images/Products/Burger Box/2.png",
+    images: ["/assets/Ecotellus Web Images/Products/Burger Box/2.png", "/assets/Ecotellus Web Images/Products/Burger Box/3.png", "/assets/Ecotellus Web Images/Products/Burger Box/4.png", "/assets/Ecotellus Web Images/Products/Burger Box/5.png", "/assets/Ecotellus Web Images/Products/Burger Box/6.png", "/assets/Ecotellus Web Images/Products/Burger Box/1.png"],
     sizes: ["Small", "Medium", "Large", "XL", "XXL", "Custom"]
   },
   {
     id: 2,
     name: "Paper Lids",
     slug: "paper-lids",
+    category: "coffee",
     image: "/assets/Ecotellus Web Images/Products/Cup's Cap/1.png",
     images: ["/assets/Ecotellus Web Images/Products/Cup's Cap/1.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/3.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/4.png", "/assets/Ecotellus Web Images/Products/Cup's Cap/5.png"],
     sizes: ["Small / 80mm", "Medium / 90mm", "Large / 110mm"]
   },
   {
     id: 3,
-    name: "Double Wall Ripple Cup",
-    slug: "double-wall-ripple-cup",
+    name: "Double Wall Cups",
+    slug: "double-wall-cups",
+    category: "coffee",
     image: "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/1.png",
     images: [
       "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/1.png",
@@ -34,8 +37,9 @@ export const productsData = [
   },
   {
     id: 4,
-    name: "Nacho's Trey",
-    slug: "nachos-trey",
+    name: "Paper Trays",
+    slug: "paper-trays",
+    category: "coffee",
     image: "/assets/Ecotellus Web Images/Products/Nacho's Trey/1.png",
     images: [
       "/assets/Ecotellus Web Images/Products/Nacho's Trey/1.png",
@@ -49,8 +53,9 @@ export const productsData = [
   },
   {
     id: 5,
-    name: "Popcorn Tub",
-    slug: "popcorn-tub",
+    name: "Popcorn Tubs",
+    slug: "popcorn-tubs",
+    category: "movie",
     image: "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/1.png",
     images: [
       "/assets/Ecotellus Web Images/Products/Popcorm Tub - red/1.png",
@@ -72,18 +77,23 @@ export const productsData = [
   },
   {
     id: 6,
-    name: "Popcorn Tub - Long",
-    slug: "popcorn-tub-long",
+    name: "Popcorn Pouches",
+    slug: "popcorn-pouches",
+    category: "movie",
     image: "/assets/Ecotellus Web Images/Products/Popcorn Tub - Long/1.png",
     images: ["/assets/Ecotellus Web Images/Products/Popcorn Tub - Long/1.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - Long/2.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - Long/3.png", "/assets/Ecotellus Web Images/Products/Popcorn Tub - Long/4.png"],
     sizes: ["Small", "Medium", "Large", "Extra Large"]
   },
   {
-    id: 7,
-    name: "Straws",
-    slug: "straws",
-    image: "/assets/Ecotellus Web Images/Products/Straws/1.webp",
-    images: ["/assets/Ecotellus Web Images/Products/Straws/1.webp", "/assets/Ecotellus Web Images/Products/Straws/2.webp", "/assets/Ecotellus Web Images/Products/Straws/3.webp"],
-    sizes: ["Standard", "Jumbo", "Boba"]
-  }
+    id: 8,
+    name: "Single Wall Cups",
+    slug: "single-wall-cups",
+    category: "coffee",
+    image: "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/5.png",
+    images: [
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/5.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/6.png",
+      "/assets/Ecotellus Web Images/Products/Double Wall Ripple Cup/7.png"],
+    sizes: ["4 oz", "8 oz", "12 oz", "16 oz", "20 oz"]
+  },
 ];

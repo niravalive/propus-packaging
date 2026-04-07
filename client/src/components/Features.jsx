@@ -1,18 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Factory, Award, Globe2, Users } from 'lucide-react';
+import { Factory, Globe2, Users, PenTool } from 'lucide-react';
 
 const features = [
   {
     icon: Factory,
     title: 'High-Volume Capacity',
-    description: 'State-of-the-art facilities producing millions of custom units monthly.',
+    description: 'Our facility is built for scale, speed and sustainability — producing millions of custom units monthly.',
     image: 'https://plus.unsplash.com/premium_photo-1682146490755-c33a53c4502d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c3RvcmUlMjByb29tfGVufDB8fDB8fHww',
   },
   {
-    icon: Award,
-    title: 'ISO & FSC Certified',
-    description: 'Uncompromising quality control and sustainable material sourcing.',
+    icon: Users,
+    title: 'Dedicated Account Manager',
+    description: 'Every wholesale partner is assigned a Dedicated Account Manager to oversee your production schedule, quality assurance, and international logistics.',
+    image: 'https://plus.unsplash.com/premium_photo-1661559063958-968c8f1928e7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNlb3xlbnwwfHwwfHx8MA%3D%3D',
+  },
+  {
+    icon: PenTool,
+    title: 'Designing & Prototyping',
+    description: "Whether it's a bespoke cinema tub for a summer blockbuster or a high-performance ripple wall for a global franchise, we turn your brand specs into production-ready reality.",
     image: 'https://media.istockphoto.com/id/2070493975/photo/quality-standard-certificate-with-check-list-data-feedback-for-quality-warranty.webp?a=1&b=1&s=612x612&w=0&k=20&c=XWxcEMgwg38hhrizG6PZ9DmPV5XRbGg4_f0VkooNMxM=',
   },
   {
@@ -20,12 +26,6 @@ const features = [
     title: 'Global Logistics',
     description: 'Optimized supply chain solutions shipping to 40+ countries worldwide.',
     image: 'https://images.unsplash.com/photo-1588011930968-eadac80e6a5a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aW5kdXN0cmllc3xlbnwwfHwwfHx8MA%3D%3D',
-  },
-  {
-    icon: Users,
-    title: 'Dedicated Account Managers',
-    description: 'Expert structural engineers and procurement specialists at your service.',
-    image: 'https://plus.unsplash.com/premium_photo-1661559063958-968c8f1928e7?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGNlb3xlbnwwfHwwfHx8MA%3D%3D',
   },
 ];
 

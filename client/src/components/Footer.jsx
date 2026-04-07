@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Mail, Phone, MapPin, ArrowRight,
-  Facebook, Instagram, Twitter, Linkedin,
+  Facebook, Instagram, Linkedin,
   CreditCard, Truck, Shield
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -26,6 +26,7 @@ const Footer = () => {
     { name: 'Products', href: '/products' },
     { name: 'Custom Printing', href: '/custom-printing' },
     { name: 'About Us', href: '/about' },
+    { name: 'Blogs', href: '/blogs' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -61,7 +62,7 @@ const Footer = () => {
               Ready to scale your packaging?
             </h2>
             <p className="text-xl text-primary-200 mb-10 leading-relaxed font-light">
-              Partner with Ecotellus for industrial-grade quality and precision engineering tailored for global brands.
+              Partner with Ecotellus for premium quality, precision printing and seamless logistics.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -90,16 +91,19 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-x-4 mb-12">
             {/* Brand */}
             <div className="lg:col-span-1">
-              <div className="flex items-center gap-3 mb-6">
+              <div className="flex items-center gap-3 mb-2">
                 <img src={logoImage} alt="ecotellus Logo" className="h-10 w-auto" />
               </div>
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.15em] text-gray-400 mb-4">
+                Reliability · Capacity · Compliance
+              </p>
               <p className="text-sm text-gray-600 leading-relaxed mb-6 font-light">
                 Engineering quality and reliability into every box.
               </p>
               <div className="space-y-3">
                 <div className="flex items-start gap-3 text-sm text-gray-600">
                   <MapPin size={16} className="text-accent-600 flex-shrink-0 mt-0.5" />
-                  <span className="leading-snug">Plot No.A 1-A 10, Silk Heritage Industrial Society, NH-53, Unn, Surat-394230</span>
+                  <span className="leading-snug">Plot No.A 1-A 10, Silk Heritage Industrial Society, NH-53, Unn, Surat, Gujarat, India</span>
                 </div>
                 <a href="tel:+917874827277" className="flex items-center gap-3 text-sm text-gray-600 hover:text-accent-600 transition-colors">
                   <Phone size={16} className="text-accent-600 flex-shrink-0" />
@@ -160,7 +164,7 @@ const Footer = () => {
               </form>
 
               <div className="flex gap-4 mt-8">
-                {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
+                {[Facebook, Instagram, Linkedin].map((Icon, i) => (
                   <a
                     key={i}
                     href="#"
