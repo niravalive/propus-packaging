@@ -30,7 +30,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/contact"
-                className="bg-accent-600 hover:bg-accent-700 text-white px-8 py-4 rounded font-bold text-lg transition-all flex items-center justify-center gap-2 group shadow-lg shadow-accent-600/20"
+                className="bg-accent-600 hover:bg-accent-700 text-white px-8 py-4 rounded font-bold text-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-2 group shadow-lg shadow-accent-600/20"
               >
                 Get a Quote
                 <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -39,13 +39,13 @@ const Hero = () => {
                 href="/assets/Catalouge.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-200/50 hover:bg-gray-200 border border-gray-300 hover:border-gray-400 text-gray-900 px-8 py-4 rounded font-bold text-lg transition-all flex items-center justify-center backdrop-blur-sm"
+                className="bg-gray-200/50 hover:bg-gray-200 border border-gray-300 hover:border-gray-400 text-gray-900 px-8 py-4 rounded font-bold text-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center backdrop-blur-sm"
               >
                 Catalogue
               </a>
               <Link
                 to="/blogs"
-                className="bg-gray-200/50 hover:bg-gray-200 border border-gray-300 hover:border-gray-400 text-gray-900 px-8 py-4 rounded font-bold text-lg transition-all flex items-center justify-center backdrop-blur-sm"
+                className="bg-gray-200/50 hover:bg-gray-200 border border-gray-300 hover:border-gray-400 text-gray-900 px-8 py-4 rounded font-bold text-lg transition-all hover:scale-105 active:scale-95 flex items-center justify-center backdrop-blur-sm"
               >
                 Blogs
               </Link>
@@ -69,25 +69,28 @@ const Hero = () => {
             {/* Left Column — Coffee Essentials */}
             <div className="flex-1 flex flex-col gap-4 sm:gap-6 pt-12 sm:pt-20">
               {/* Top Left: Coffee Shop Lifestyle */}
-              <Link to="/products?category=coffee">
+              <Link to="/products?category=movie">
                 <motion.div
-                  className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-lg cursor-pointer group"
+                  className="w-full aspect-square rounded-3xl overflow-hidden shadow-lg cursor-pointer group relative"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
                 >
                   <img
-                    src="/assets/generated/coffee-shop-lifestyle.png"
-                    alt="Coffee Shop Essentials — Paper Cups, Lids & Takeaway Packaging"
+                    src="/assets/generated/movie-popcorn-lifestyle.png"
+                    alt="Movie Essentials — Premium Popcorn Tubs & Cinema Packaging"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl flex items-end p-4">
+                    <span className="text-white text-xs font-bold tracking-wider uppercase">Movie Essentials →</span>
+                  </div>
                 </motion.div>
               </Link>
 
+
               {/* Bottom Left: Big Factory Image */}
               <motion.div
-                className="w-full aspect-square sm:aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl"
+                className="w-[115%] -ml-[15%] sm:w-[130%] sm:-ml-[30%] lg:w-[160%] lg:-ml-[60%] aspect-[2/1] rounded-3xl overflow-hidden shadow-2xl relative z-20"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
@@ -117,23 +120,22 @@ const Hero = () => {
               </motion.div>
 
               {/* Bottom Right: Movie Popcorn Lifestyle */}
-              <Link to="/products?category=movie">
+              <Link to="/products?category=coffee">
                 <motion.div
-                  className="w-full aspect-square rounded-3xl overflow-hidden shadow-lg cursor-pointer group relative"
+                  className="w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-lg cursor-pointer group"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
                 >
                   <img
-                    src="/assets/generated/movie-popcorn-lifestyle.png"
-                    alt="Movie Essentials — Premium Popcorn Tubs & Cinema Packaging"
+                    src="/assets/generated/coffee-shop-lifestyle.png"
+                    alt="Coffee Shop Essentials — Paper Cups, Lids & Takeaway Packaging"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl flex items-end p-4">
-                    <span className="text-white text-xs font-bold tracking-wider uppercase">Movie Essentials →</span>
-                  </div>
+
                 </motion.div>
               </Link>
+
             </div>
           </div>
         </div>
