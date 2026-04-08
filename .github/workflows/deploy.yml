@@ -31,7 +31,7 @@ jobs:
       - name: Build client
         run: cd client && npm run build
 
-      # 5. Deploy to FTP (BigRock / Hostinger)
+      # 5. Deploy via FTP
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -43,5 +43,5 @@ jobs:
           security: loose
           passive: true
           local-dir: client/dist/
-          server-dir: public_html/
+          server-dir: /
           log-level: verbose
