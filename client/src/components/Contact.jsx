@@ -8,6 +8,7 @@ import { productsData } from '../data/products';
 const Contact = () => {
   const location = useLocation();
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState('');
   const [availableSizes, setAvailableSizes] = useState([]);
   const [selectedSize, setSelectedSize] = useState('');
@@ -40,9 +41,28 @@ const Contact = () => {
     setAvailableSizes(product ? product.sizes : []);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+    const formData = new FormData(e.target);
+    formData.append("access_key", "0dda8011-9b32-4585-9cb8-89d65f6c07a4");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      const data = await response.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        alert("Error submitting form: " + data.message);
+      }
+    } catch (error) {
+      alert("Error submitting form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -78,7 +98,7 @@ const Contact = () => {
 
       </div>
 
-      <div className="max-w-[87.5rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-10">
         <div className="bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden">
           <div className="grid lg:grid-cols-3">
 
@@ -155,19 +175,19 @@ const Contact = () => {
                 <div className="grid sm:grid-cols-2 gap-4 mb-8">
                   <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Company Name *</label>
-                    <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" required />
+                    <input type="text" name="company_name" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" required />
                   </div>
                   <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Contact Name *</label>
-                    <input type="text" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" required />
+                    <input type="text" name="contact_name" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" required />
                   </div>
                   <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Work Email *</label>
-                    <input type="email" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" required />
+                    <input type="email" name="email" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" required />
                   </div>
                   <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Phone Number</label>
-                    <input type="tel" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" />
+                    <input type="tel" name="phone" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" />
                   </div>
                 </div>
 
@@ -179,6 +199,7 @@ const Contact = () => {
                   <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Select Product *</label>
                     <select
+                      name="product"
                       value={selectedProduct}
                       onChange={handleProductChange}
                       className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors appearance-none shadow-sm text-sm"
@@ -194,6 +215,7 @@ const Contact = () => {
                   <div>
                     <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Available Sizes *</label>
                     <select
+                      name="size"
                       value={selectedSize}
                       onChange={(e) => setSelectedSize(e.target.value)}
                       disabled={!selectedProduct}
@@ -209,12 +231,12 @@ const Contact = () => {
 
                   <div className="sm:col-span-2">
                     <label className="block text-xs font-bold text-gray-500 mb-1.5 uppercase tracking-wide">Project Details & Timeline</label>
-                    <textarea rows="3" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" placeholder="Briefly describe your requirements..."></textarea>
+                    <textarea name="message" rows="3" className="w-full bg-gray-50 border border-gray-200 rounded p-3 focus:outline-none focus:border-accent-500 transition-colors shadow-sm text-sm" placeholder="Briefly describe your requirements..."></textarea>
                   </div>
                 </div>
 
-                <button type="submit" className="w-full bg-accent-600 hover:bg-accent-700 text-white px-8 py-3.5 rounded font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-accent-600/20 uppercase tracking-widest active:scale-[0.98] text-sm">
-                  Submit Inquiry <Send size={16} />
+                <button type="submit" disabled={isSubmitting} className="w-full bg-accent-600 hover:bg-accent-700 disabled:bg-accent-400 text-white px-8 py-3.5 rounded font-bold transition-all flex items-center justify-center gap-2 shadow-lg shadow-accent-600/20 uppercase tracking-widest active:scale-[0.98] text-sm">
+                  {isSubmitting ? 'Submitting...' : 'Submit Inquiry'} {!isSubmitting && <Send size={16} />}
                 </button>
               </form>
             </div>

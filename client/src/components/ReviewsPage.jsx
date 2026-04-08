@@ -191,7 +191,7 @@ const ReviewsPage = () => {
   return (
     <div className="bg-white">
       {/* Full Screen Hero (Strict 100vh) */}
-      <section className="bg-primary-950 h-screen flex items-center justify-center text-center px-4 relative overflow-hidden">
+      <section className="bg-primary-950 min-h-[80vh] flex flex-col items-center justify-center text-center px-4 relative overflow-hidden py-24">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&auto=format&fit=crop&q=60')] bg-cover bg-center opacity-30"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-primary-950/80 via-primary-950/60 to-primary-950/90"></div>
         <div className="absolute inset-0 opacity-[0.05]" style={{
@@ -199,7 +199,7 @@ const ReviewsPage = () => {
           backgroundSize: '40px 40px'
         }} />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-0 -mt-96">
+        <div className="relative z-10 max-w-5xl mx-auto px-0 mb-16">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center">
             <span className="inline-block px-5 py-2 bg-accent-600/20 text-accent-400 text-[0.6875rem] font-black tracking-[0.4em] uppercase mb-8 rounded-full border border-accent-600/40 backdrop-blur-sm">
               Impact Verified · Quality Assured
@@ -214,7 +214,7 @@ const ReviewsPage = () => {
         </div>
 
         {/* Massive Stats Bar Integrated at bottom of Hero */}
-        <div className="absolute bottom-60 left-0 right-0 z-20 px-4">
+        <div className="relative z-20 px-4 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}

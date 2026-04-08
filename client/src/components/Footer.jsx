@@ -50,7 +50,7 @@ const Footer = () => {
           }}
         ></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-accent-600 rounded-full blur-[7.5rem] opacity-10 pointer-events-none"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-12 md:py-20">
+        <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-12 md:py-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

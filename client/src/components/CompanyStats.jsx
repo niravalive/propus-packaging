@@ -79,23 +79,24 @@ const CompanyStats = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="relative w-full rounded-xl overflow-hidden border border-gray-200"
+          className="relative w-full lg:rounded-xl lg:overflow-hidden lg:border lg:border-gray-200"
           style={{ minHeight: '26.25rem' }}
         >
-          {/* Full background image */}
-          <img
-            src="/assets/Ecotellus Web Images/Factory /factory 2.webp"
-            alt="Ecotellus packaging factory interior"
-            className="absolute inset-0 w-full h-full object-cover -translate-x-80"
-          />
-
-          {/* Fade gradient: image fades from visible (left) to white (right) */}
-          <div
-            className="absolute inset-0"
-            style={{
-              background: 'linear-gradient(to right, transparent 10%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.92) 55%, #ffffff 65%)',
-            }}
-          ></div>
+          {/* Full background image (Desktop Only) */}
+          <div className="hidden lg:block absolute inset-0">
+            <img
+              src="/assets/Ecotellus Web Images/Factory/factory 2.webp"
+              alt="Ecotellus packaging factory interior"
+              className="absolute inset-0 w-full h-full object-cover lg:-translate-x-[15%]"
+            />
+            {/* Fade gradient: image fades from visible (left) to white (right) */}
+            <div
+              className="absolute inset-0"
+              style={{
+                background: 'linear-gradient(to right, transparent 10%, rgba(255,255,255,0.3) 30%, rgba(255,255,255,0.7) 45%, rgba(255,255,255,0.92) 55%, #ffffff 65%)',
+              }}
+            ></div>
+          </div>
 
           {/* Content layer */}
           <div className="relative z-10 flex items-stretch w-full h-full" style={{ minHeight: '26.25rem' }}>
@@ -103,7 +104,7 @@ const CompanyStats = () => {
             <div className="hidden lg:block lg:w-[40%]"></div>
 
             {/* Right side: Stats with "+" crosshair divider */}
-            <div className="w-full lg:w-[60%] flex items-center justify-center py-12 px-6 sm:px-10">
+            <div className="w-full lg:w-[60%] flex items-center justify-center py-10 px-4 sm:px-10 bg-white lg:bg-transparent rounded-2xl border border-gray-200 shadow-sm lg:border-none lg:shadow-none lg:rounded-none lg:py-12">
               <div className="relative w-full max-w-[32.5rem]">
                 {/* The "+" cross divider */}
                 {/* Vertical line */}

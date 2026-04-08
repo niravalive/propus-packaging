@@ -19,7 +19,7 @@ const Hero = () => {
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
               Custom{' '}
-              <span className="text-accent-500">Food Packaging</span>{' '}
+              <span className="text-accent-500"><br />Food Packaging</span>{' '}
               Solutions
             </h1>
 
@@ -90,13 +90,13 @@ const Hero = () => {
 
               {/* Bottom Left: Big Factory Image */}
               <motion.div
-                className="w-[115%] -ml-[15%] sm:w-[130%] sm:-ml-[30%] lg:w-[160%] lg:-ml-[60%] aspect-[2/1] rounded-3xl overflow-hidden shadow-2xl relative z-20"
+                className="w-[115%] -ml-[15%] sm:w-[130%] sm:-ml-[30%] lg:w-[140%] lg:-ml-[40%] aspect-[2/1] rounded-3xl overflow-hidden shadow-2xl relative z-20"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
                 <img
-                  src="/assets/Ecotellus Web Images/Factory /factory 2.webp"
+                  src="/assets/Ecotellus Web Images/Factory/factory 2.webp"
                   alt="Factory Process"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
