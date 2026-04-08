@@ -5,33 +5,25 @@ on:
     branches:
       - main
 
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repo
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Setup Node
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
 
-      # 3. Install dependencies (client only)
       - name: Install client dependencies
         run: cd client && npm install
 
-      # 4. Build Vite frontend
       - name: Build client
         run: cd client && npm run build
 
-      # 5. Deploy via FTP
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -41,7 +33,6 @@ jobs:
           port: 21
           protocol: ftps
           security: loose
-          passive: true
           local-dir: client/dist/
-          server-dir: /
+          server-dir: /public_html/
           log-level: verbose
