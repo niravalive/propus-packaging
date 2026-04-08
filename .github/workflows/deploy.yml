@@ -31,10 +31,12 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          protocol: ftp          # 👈 changed (more stable than ftps on your server)
+          protocol: ftp
           local-dir: client/dist/
           server-dir: /public_html/
-          state-name: none
-          dangerous-clean-slate: true
-          timeout: 600000        # 👈 THIS fixes your timeout error
+
+          # ✅ FIXES
+          state-name: .ftp-deploy-sync-state.json
+          dangerous-clean-slate: false
+          timeout: 600000
           log-level: verbose
