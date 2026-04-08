@@ -1,9 +1,12 @@
-name: Deploy Frontend to Ecotellus
+name: Debug Deploy
 
 on:
   push:
     branches:
       - main
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build-and-deploy:
@@ -19,14 +22,11 @@ jobs:
       - name: Install client dependencies
         run: cd client && npm install
 
-      - name: Build client
-        run: cd client && npm run build
-
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: ftp.1766586956-linux.bigrock.in
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: client/dist/   # or client/build/
-          server-dir: public_html/
+      - name: Build client with debug
+        run: |
+          cd client
+          npm run build
+          echo "==== FILES ===="
+          ls -la
+          echo "==== DIST ===="
+          ls -la dist || echo "NO DIST FOUND"
